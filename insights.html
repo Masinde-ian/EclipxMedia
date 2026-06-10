@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eclipxmedia — Insights & Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const hdr = await fetch('partials/header.html');
+    document.getElementById('header-placeholder').innerHTML = await hdr.text();
+    if (typeof initTheme === 'function') initTheme();
+    const ftr = await fetch('partials/footer.html');
+    document.getElementById('footer-placeholder').innerHTML = await ftr.text();
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.page-tab').forEach(function(a) {
+      if (a.getAttribute('href') === current) a.classList.add('active');
+    });
+  } catch(e) {
+    console.warn('Could not load header/footer partials.', e);
+  }
+});
+</script>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+
+<div style="padding:28px 48px;border-bottom:1px solid var(--border);background:var(--bg-card);display:flex;justify-content:space-between;align-items:center;">
+  <div class="label">// 04 &mdash; Insights &amp; Editorial Index</div>
+  <div class="label">Signal &mdash; Technical Marketing Intelligence &middot; Published Weekly</div>
+</div>
+
+<article class="ins-hero-card">
+  <div class="ins-hero-left">
+    <div class="ins-hero-top">
+      <span class="ins-category-tag">Featured &middot; Technical Infrastructure</span>
+      <h1 class="ins-hero-title">The Complete Guide to First-Party Conversion Tracking Overrides: Server-Side Architecture for a Post-Cookie Ecosystem</h1>
+      <p class="ins-hero-summary">Browser-based tracking is structurally compromised. iOS privacy changes, Safari ITP, Firefox ETP, and enterprise ad-blocker penetration rates of 38&ndash;52% in B2B environments have rendered client-side pixel data an unreliable foundation for paid media decisions. This guide documents the complete server-side override architecture &mdash; from sGTM container configuration to Meta CAPI event deduplication logic &mdash; that we deploy across all accounts managing over $100K/month in ad spend. No hypothetical frameworks. Documented from live production environments with anonymised event parity data included.</p>
+      <div class="ins-hero-meta">
+        <div class="ins-meta-item">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="3" x2="6" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/><line x1="6" y1="7" x2="8.5" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+          <span>28 min read</span>
+        </div>
+        <div class="ins-meta-item">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="2" width="10" height="9" stroke="currentColor" stroke-width="1.5"/><line x1="4" y1="1" x2="4" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/><line x1="8" y1="1" x2="8" y2="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+          <span>Published: 12 MAR 2025</span>
+        </div>
+        <div class="ins-meta-item"><span style="font-family:var(--mono);font-size:10px;border:1px solid var(--border);padding:2px 8px;">Intermediate &mdash; Advanced</span></div>
+      </div>
+      <a href="#" class="ins-read-cta">Read Full Article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></a>
+    </div>
+  </div>
+  <div class="ins-hero-right">
+    <div class="ins-abstract-block">
+      <div class="ins-abstract-label">Signal Loss by Tracking Method</div>
+      <div class="ins-mini-chart">
+        <div class="ins-mini-bar" style="height:100%"></div>
+        <div class="ins-mini-bar" style="height:68%"></div>
+        <div class="ins-mini-bar" style="height:45%"></div>
+        <div class="ins-mini-bar" style="height:22%"></div>
+        <div class="ins-mini-bar" style="height:8%"></div>
+      </div>
+      <div class="ins-abstract-text" style="margin-top:8px;">Browser-only &rarr; CAPI (no dedup) &rarr; CAPI (dedup) &rarr; sGTM &rarr; sGTM + First-Party</div>
+    </div>
+    <div class="ins-abstract-block">
+      <div class="ins-abstract-label">Article Architecture &mdash; 7 Sections</div>
+      <div class="ins-abstract-text">
+        01 // The Signal Loss Problem &mdash; Quantified<br>
+        02 // sGTM Container Setup &mdash; Full Walkthrough<br>
+        03 // Meta CAPI Configuration &amp; Dedup Logic<br>
+        04 // Google Enhanced Conversions Setup<br>
+        05 // Event Parity Testing Methodology<br>
+        06 // First-Party Data Enrichment Layer<br>
+        07 // QA Protocol &amp; Ongoing Maintenance
+      </div>
+    </div>
+    <div class="ins-abstract-block">
+      <div class="ins-abstract-label">Prerequisite Knowledge</div>
+      <div class="ins-abstract-text">Google Tag Manager (intermediate), GA4 event schema, basic JavaScript, access to a server-side GTM container. Estimated setup time following guide: 4&ndash;6 hours for a single-domain implementation.</div>
+    </div>
+  </div>
+</article>
+
+<section class="articles-section">
+  <div class="articles-header">
+    <div><div class="label">// Latest Technical Articles</div><h2 class="section-h2" style="margin-top:10px;">The full index.</h2></div>
+    <div class="mono" style="font-size:11px;color:var(--text-muted);">Hover any row to preview &middot; Click to read</div>
+  </div>
+
+  <div class="article-row" id="art-1">
+    <div class="article-thumb" id="thumb-1">
+      <div class="article-thumb-content">
+        <div class="article-thumb-bars"><div class="atb" style="height:40%"></div><div class="atb" style="height:60%"></div><div class="atb" style="height:80%"></div><div class="atb" style="height:100%"></div><div class="atb" style="height:90%"></div><div class="atb" style="height:75%"></div><div class="atb" style="height:85%"></div></div>
+        <div class="article-thumb-label">Keyword Economics Model</div>
+      </div>
+    </div>
+    <div class="article-idx">01 //</div>
+    <div class="article-body">
+      <div class="article-cat"><span style="border:1px solid var(--border);padding:2px 8px;">Enterprise SEO</span><span>Technical Strategy</span></div>
+      <h3 class="article-title">Keyword Cluster Economics: How to Build a Financial Model for Organic Content Investment Before Writing a Single Word</h3>
+      <p class="article-excerpt">Most content strategies are built on traffic projections without a denominator. This framework documents the full keyword cluster economics model we use to evaluate the revenue potential of any content investment &mdash; calculating expected traffic volume, conversion rate by intent tier, revenue-per-session, and required link acquisition velocity against production cost &mdash; before commissioning a single piece of content.</p>
+      <div class="article-tags"><span class="cs-tech-tag">Keyword Research</span><span class="cs-tech-tag">SEO ROI Modelling</span><span class="cs-tech-tag">Google Sheets Template Included</span></div>
+    </div>
+    <div class="article-meta">
+      <div><div class="article-date">08 JAN 2025</div><div class="article-readtime">22 min read</div></div>
+      <a href="#" class="ins-read-cta" style="font-size:9px;padding:7px 14px;">Read &rarr;</a>
+    </div>
+  </div>
+
+  <div class="article-row" id="art-2">
+    <div class="article-thumb" id="thumb-2">
+      <div class="article-thumb-content">
+        <div class="article-thumb-bars"><div class="atb" style="height:100%"></div><div class="atb" style="height:70%"></div><div class="atb" style="height:50%"></div><div class="atb" style="height:35%"></div><div class="atb" style="height:25%"></div><div class="atb" style="height:18%"></div><div class="atb" style="height:12%"></div></div>
+        <div class="article-thumb-label">Creative Fatigue Decay Curve</div>
+      </div>
+    </div>
+    <div class="article-idx">02 //</div>
+    <div class="article-body">
+      <div class="article-cat"><span style="border:1px solid var(--border);padding:2px 8px;">Paid Media</span><span>Creative Performance</span></div>
+      <h3 class="article-title">The Creative Fatigue Problem: How to Model Ad Decay Curves and Build Rotation Systems That Prevent CPM Inflation Before It Compounds</h3>
+      <p class="article-excerpt">Creative fatigue is not a subjective feeling &mdash; it is a measurable decay curve with predictable inflection points. This article documents the data model we use to track hook rate, CTR decay, and frequency-to-CPM correlation across active campaigns, producing a rotation schedule that pre-empts performance degradation rather than responding to it after spend efficiency has already collapsed.</p>
+      <div class="article-tags"><span class="cs-tech-tag">Meta Ads</span><span class="cs-tech-tag">Creative Testing</span><span class="cs-tech-tag">Frequency Analysis</span><span class="cs-tech-tag">Rotation Framework</span></div>
+    </div>
+    <div class="article-meta">
+      <div><div class="article-date">14 FEB 2025</div><div class="article-readtime">18 min read</div></div>
+      <a href="#" class="ins-read-cta" style="font-size:9px;padding:7px 14px;">Read &rarr;</a>
+    </div>
+  </div>
+
+  <div class="article-row" id="art-3">
+    <div class="article-thumb" id="thumb-3">
+      <div class="article-thumb-content">
+        <div class="article-thumb-bars"><div class="atb" style="height:30%"></div><div class="atb" style="height:42%"></div><div class="atb" style="height:58%"></div><div class="atb" style="height:74%"></div><div class="atb" style="height:88%"></div><div class="atb" style="height:100%"></div><div class="atb" style="height:95%"></div></div>
+        <div class="article-thumb-label">Incrementality Test Results</div>
+      </div>
+    </div>
+    <div class="article-idx">03 //</div>
+    <div class="article-body">
+      <div class="article-cat"><span style="border:1px solid var(--border);padding:2px 8px;">Attribution</span><span>Measurement Methodology</span></div>
+      <h3 class="article-title">Incrementality Testing at Scale: Ghost Bidding, Holdout Groups, and Conversion Lift Studies That Your Finance Team Will Actually Trust</h3>
+      <p class="article-excerpt">Last-click attribution tells you which channel got credit. Incrementality testing tells you which channel actually caused the conversion. This guide covers the three incrementality methodologies we deploy &mdash; Meta Conversion Lift, Google Campaign Experiments, and third-party holdout testing via Northbeam &mdash; including when to use each, how to interpret results, and how to present findings to a CFO who is sceptical of marketing's self-reported numbers.</p>
+      <div class="article-tags"><span class="cs-tech-tag">Attribution</span><span class="cs-tech-tag">Conversion Lift</span><span class="cs-tech-tag">Ghost Bidding</span><span class="cs-tech-tag">MMM</span><span class="cs-tech-tag">Northbeam</span></div>
+    </div>
+    <div class="article-meta">
+      <div><div class="article-date">03 MAR 2025</div><div class="article-readtime">31 min read</div></div>
+      <a href="#" class="ins-read-cta" style="font-size:9px;padding:7px 14px;">Read &rarr;</a>
+    </div>
+  </div>
+
+  <div class="article-row" id="art-4">
+    <div class="article-thumb" id="thumb-4">
+      <div class="article-thumb-content">
+        <div class="article-thumb-bars"><div class="atb" style="height:60%"></div><div class="atb" style="height:75%"></div><div class="atb" style="height:90%"></div><div class="atb" style="height:100%"></div><div class="atb" style="height:88%"></div><div class="atb" style="height:92%"></div><div class="atb" style="height:95%"></div></div>
+        <div class="article-thumb-label">A/B Test Significance</div>
+      </div>
+    </div>
+    <div class="article-idx">04 //</div>
+    <div class="article-body">
+      <div class="article-cat"><span style="border:1px solid var(--border);padding:2px 8px;">CRO</span><span>Statistical Methods</span></div>
+      <h3 class="article-title">Why Most A/B Tests Are Statistically Meaningless: Sample Size, Significance Thresholds, and Stopping Rules That Produce Decisions &mdash; Not Guesses</h3>
+      <p class="article-excerpt">The majority of A/B tests run by marketing teams are underpowered, stopped too early, or interpreted through a frequentist lens that produces false confidence. This article documents the Bayesian test methodology we use &mdash; including minimum detectable effect calculations, correct stopping rules, and how to account for revenue-per-variant rather than conversion rate alone &mdash; so that every test you run produces a decision you can defend to a board, not just a percentage lift you want to believe.</p>
+      <div class="article-tags"><span class="cs-tech-tag">A/B Testing</span><span class="cs-tech-tag">Bayesian Statistics</span><span class="cs-tech-tag">Sample Size</span><span class="cs-tech-tag">VWO / Optimizely</span></div>
+    </div>
+    <div class="article-meta">
+      <div><div class="article-date">21 MAR 2025</div><div class="article-readtime">24 min read</div></div>
+      <a href="#" class="ins-read-cta" style="font-size:9px;padding:7px 14px;">Read &rarr;</a>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

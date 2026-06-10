@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eclipxmedia — Data-Driven Growth Agency, Nairobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const hdr = await fetch('partials/header.html');
+    document.getElementById('header-placeholder').innerHTML = await hdr.text();
+    if (typeof initTheme === 'function') initTheme();
+    const ftr = await fetch('partials/footer.html');
+    document.getElementById('footer-placeholder').innerHTML = await ftr.text();
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.page-tab').forEach(function(a) {
+      if (a.getAttribute('href') === current) a.classList.add('active');
+    });
+  } catch(e) {
+    console.warn('Could not load header/footer partials.', e);
+  }
+});
+</script>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+
+<!-- ─── S1: HERO CANVAS ─────────────────────── -->
+<section class="hero" id="hero">
+
+  <div class="hero-header">
+    <div class="hero-meta-left">
+      <div class="label">eclipxmedia &mdash; Est. 2024</div>
+      <div class="coordinates mono" style="font-size:10px;color:var(--text-muted);margin-top:4px;">
+        1.2921&deg; S, 36.8219&deg; E &nbsp;&middot;&nbsp; Nairobi, Kenya
+      </div>
+    </div>
+    <div class="hero-meta-right">
+      <div class="live-indicator">
+        <div class="live-dot"></div>
+        <span>Live attribution tracking &mdash; <span id="live-spend">KES 0</span> managed today</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-copy">
+
+      <div class="hero-eyebrow">
+        Performance Marketing Intelligence
+      </div>
+
+      <h1 class="hero-h1">
+        Growth built<br>
+        on verified<br>
+        <em>signal,</em><br>
+        not assumption.
+      </h1>
+
+      <p class="hero-sub">
+        We engineer revenue-producing digital systems for B2B and DTC brands that have outgrown
+        surface-level marketing. <strong>Every budget allocation, creative decision, and channel
+        expansion is driven by multi-touch attribution data</strong> &mdash; not instinct, not tradition,
+        not vanity metrics.
+      </p>
+
+      <div class="hero-markers">
+        <div class="hero-marker">
+          <span class="hero-marker-idx">// 01</span>
+          <span>Full-funnel paid acquisition across Meta, Google, LinkedIn &amp; TikTok</span>
+        </div>
+        <div class="hero-marker">
+          <span class="hero-marker-idx">// 02</span>
+          <span>Server-side tracking infrastructure with first-party data pipelines</span>
+        </div>
+        <div class="hero-marker">
+          <span class="hero-marker-idx">// 03</span>
+          <span>Real-time Looker Studio dashboards synced to your P&amp;L targets</span>
+        </div>
+        <div class="hero-marker">
+          <span class="hero-marker-idx">// 04</span>
+          <span>Weekly sprint cadences &mdash; no monthly decks, no lagging indicators</span>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="contact.html" class="cta-primary">
+          Request Growth Audit
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+        <a href="proof.html" class="cta-secondary">View Case Studies</a>
+      </div>
+
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat-item">
+        <div class="stat-value" data-count="15" data-suffix="B+" data-prefix="KES ">KES 0</div>
+        <div class="stat-label">Ad Spend Managed, Cumulative</div>
+        <div class="stat-delta mono" style="font-size:10px;">&uarr; +18% YoY</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="stat-value" data-count="4.7" data-suffix="x">0x</div>
+        <div class="stat-label">Average Client ROAS, 24-Month Cohort</div>
+        <div class="stat-delta">Across 24 active accounts</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="stat-value" data-count="94" data-suffix="%">0%</div>
+        <div class="stat-label">Client Retention Rate, 12-Month</div>
+        <div class="stat-delta">Industry avg: 62%</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="stat-value" data-count="11" data-suffix="">0</div>
+        <div class="stat-label">Verified Attribution Models Deployed</div>
+        <div class="stat-delta">MMM, MTA, Incrementality</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-footer">
+    <div class="hero-footer-cell">
+      <div class="label">Avg. Onboarding Speed</div>
+      <div class="mono" style="font-size:13px;color:var(--text-secondary);margin-top:4px;">14 days to first live campaign</div>
+    </div>
+    <div class="hero-footer-cell">
+      <div class="label">Minimum Engagement</div>
+      <div class="mono" style="font-size:13px;color:var(--text-secondary);margin-top:4px;">KES 1M/mo ad spend threshold</div>
+    </div>
+    <div class="hero-footer-cell">
+      <div class="label">Reporting Cadence</div>
+      <div class="mono" style="font-size:13px;color:var(--text-secondary);margin-top:4px;">Weekly sprint + live dashboard</div>
+    </div>
+    <div class="hero-footer-cell">
+      <div class="label">Data Infrastructure</div>
+      <div class="mono" style="font-size:13px;color:var(--text-secondary);margin-top:4px;">Server-side GA4, Segment, BigQuery</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── S2: TRUST TICKER ─────────────────────── -->
+<section class="ticker-section" aria-label="Client logos">
+  <div class="ticker-label">Trusted By</div>
+  <div class="ticker-track">
+    <span class="ticker-logo">Safaricom</span>
+    <span class="ticker-logo">Equity Bank</span>
+    <span class="ticker-logo">KCB Group</span>
+    <span class="ticker-logo">M-Pesa</span>
+    <span class="ticker-logo">Twiga Foods</span>
+    <span class="ticker-logo">Cellulant</span>
+    <span class="ticker-logo">Flutterwave</span>
+    <span class="ticker-logo">Nguo</span>
+    <span class="ticker-logo">Shamba OS</span>
+    <span class="ticker-logo">Pesa Capital</span>
+    <span class="ticker-logo">Safaricom</span>
+    <span class="ticker-logo">Equity Bank</span>
+    <span class="ticker-logo">KCB Group</span>
+    <span class="ticker-logo">M-Pesa</span>
+    <span class="ticker-logo">Twiga Foods</span>
+    <span class="ticker-logo">Cellulant</span>
+    <span class="ticker-logo">Flutterwave</span>
+    <span class="ticker-logo">Nguo</span>
+    <span class="ticker-logo">Shamba OS</span>
+    <span class="ticker-logo">Pesa Capital</span>
+  </div>
+</section>
+
+<!-- ─── S3: GROWTH REEL ──────────────────────── -->
+<section class="showreel-section reveal">
+  <div class="section-header">
+    <div class="section-title-block">
+      <div class="label">// Agency Showreel &mdash; 2024</div>
+      <h2 class="section-h2" style="margin-top:12px;">
+        Systems that<br>perform at scale.
+      </h2>
+    </div>
+    <div class="section-desc">
+      Two minutes of live campaign infrastructure, creative testing frameworks,
+      and attribution dashboards from active client accounts.
+    </div>
+  </div>
+
+  <div class="showreel-container" role="button" aria-label="Play agency showreel" tabindex="0">
+    <div class="showreel-visual"></div>
+
+    <div class="mock-chart">
+      <div class="mock-bar" style="height:38%;animation-delay:0.1s"></div>
+      <div class="mock-bar" style="height:55%;animation-delay:0.15s"></div>
+      <div class="mock-bar" style="height:42%;animation-delay:0.2s"></div>
+      <div class="mock-bar" style="height:70%;animation-delay:0.25s"></div>
+      <div class="mock-bar" style="height:61%;animation-delay:0.3s"></div>
+      <div class="mock-bar" style="height:88%;animation-delay:0.35s"></div>
+      <div class="mock-bar" style="height:74%;animation-delay:0.4s"></div>
+      <div class="mock-bar" style="height:92%;animation-delay:0.45s"></div>
+      <div class="mock-bar" style="height:67%;animation-delay:0.5s"></div>
+      <div class="mock-bar" style="height:81%;animation-delay:0.55s"></div>
+      <div class="mock-bar" style="height:78%;animation-delay:0.6s"></div>
+      <div class="mock-bar" style="height:95%;animation-delay:0.65s"></div>
+      <div class="mock-bar" style="height:72%;animation-delay:0.7s"></div>
+      <div class="mock-bar" style="height:86%;animation-delay:0.75s"></div>
+      <div class="mock-bar" style="height:91%;animation-delay:0.8s"></div>
+      <div class="mock-bar" style="height:69%;animation-delay:0.85s"></div>
+    </div>
+
+    <div class="showreel-overlay">
+      <div class="showreel-top">
+        <div class="showreel-tag">ECLIPXMEDIA // SHOWREEL 2024 // 02:14</div>
+        <div class="showreel-play" role="button" aria-label="Play video">
+          <div class="play-icon"></div>
+        </div>
+      </div>
+      <div class="showreel-bottom">
+        <div class="showreel-metrics">
+          <div class="showreel-metric">
+            <div class="val">KES 15B+</div>
+            <div class="lbl">Ad Spend Shown</div>
+          </div>
+          <div class="showreel-metric">
+            <div class="val">47</div>
+            <div class="lbl">Active Accounts</div>
+          </div>
+          <div class="showreel-metric">
+            <div class="val">4.7x</div>
+            <div class="lbl">Avg. ROAS</div>
+          </div>
+        </div>
+        <div class="showreel-tag">Scroll-triggered &middot; Scale on enter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── S4: CAPABILITIES GRID ────────────────── -->
+<section class="capabilities-section">
+  <div class="capabilities-header reveal">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+      <div>
+        <div class="label">// Core Capabilities</div>
+        <h2 class="section-h2" style="margin-top:12px;">
+          Three disciplines.<br>One integrated system.
+        </h2>
+      </div>
+      <div style="max-width:300px;text-align:right;">
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;">
+          Each practice area feeds data into the others. Siloed execution produces siloed results.
+          We don't do siloed.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="capabilities-grid">
+
+    <div class="cap-card reveal">
+      <div class="cap-number">01 // Performance Marketing</div>
+      <div class="cap-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <polyline points="2,14 7,8 11,11 18,4" class="icon-line"/>
+          <polyline points="14,4 18,4 18,8" class="icon-line"/>
+        </svg>
+      </div>
+      <h3 class="cap-title">Paid Acquisition<br>&amp; Revenue Systems</h3>
+      <p class="cap-desc">
+        We build full-funnel paid systems that scale predictably. Every media dollar
+        is deployed against a verified cost-per-outcome model &mdash; not a cost-per-click.
+        Our campaign architecture separates prospecting from retargeting from retention,
+        with distinct creative frameworks and bidding strategies for each stage.
+        <br><br>
+        Attribution is server-side by default. We don't accept browser-based tracking
+        as ground truth. Signal loss from iOS changes, cookie deprecation, and ad blocker
+        penetration is accounted for before the first dollar is spent.
+      </p>
+      <ul class="cap-list">
+        <li>Meta Ads Manager &mdash; Advantage+ &amp; manual campaign structures</li>
+        <li>Google Search, PMax, YouTube &mdash; unified asset strategy</li>
+        <li>LinkedIn ABM campaigns for enterprise B2B pipelines</li>
+        <li>TikTok Spark Ads with creator content testing matrix</li>
+        <li>Server-side CAPI + GA4 MP event verification</li>
+        <li>Weekly creative fatigue analysis &amp; rotation schedules</li>
+      </ul>
+      <div class="cap-footer">
+        <a href="services.html" class="cap-link">
+          View Full Capability
+          <span class="cap-link-arrow">&rarr;</span>
+        </a>
+        <div class="label">PAID &middot; MEDIA &middot; ATTRIBUTION</div>
+      </div>
+    </div>
+
+    <div class="cap-card reveal reveal-delay-1">
+      <div class="cap-number">02 // Brand Architecture</div>
+      <div class="cap-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <rect x="3" y="3" width="6" height="6" class="icon-line"/>
+          <rect x="11" y="3" width="6" height="6" class="icon-line"/>
+          <rect x="3" y="11" width="6" height="6" class="icon-line"/>
+          <rect x="11" y="11" width="6" height="6" class="icon-line"/>
+        </svg>
+      </div>
+      <h3 class="cap-title">Brand Positioning<br>&amp; Messaging Systems</h3>
+      <p class="cap-desc">
+        Brand work without performance accountability is decoration. We build positioning
+        frameworks that are tested against real conversion data &mdash; not focus groups.
+        Messaging hierarchies are constructed from win/loss interviews, CRM stage analysis,
+        and heatmap data from existing landing page performance.
+        <br><br>
+        Every brand deliverable has a testable hypothesis attached. Visual identity decisions
+        are validated in paid media before being deployed across owned channels.
+        No assumption escapes the measurement framework.
+      </p>
+      <ul class="cap-list">
+        <li>ICP profiling from CRM first-party data &amp; sales call analysis</li>
+        <li>Competitive positioning gap analysis using keyword share-of-voice</li>
+        <li>Messaging hierarchy mapped to funnel stage &amp; buyer intent</li>
+        <li>Visual identity validated via creative A/B testing on paid</li>
+        <li>Brand voice documentation with copywriting specification</li>
+        <li>Narrative architecture for investor, sales, &amp; media materials</li>
+      </ul>
+      <div class="cap-footer">
+        <a href="services.html" class="cap-link">
+          View Full Capability
+          <span class="cap-link-arrow">&rarr;</span>
+        </a>
+        <div class="label">BRAND &middot; STRATEGY &middot; COPY</div>
+      </div>
+    </div>
+
+    <div class="cap-card reveal reveal-delay-2">
+      <div class="cap-number">03 // Enterprise SEO</div>
+      <div class="cap-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <circle cx="9" cy="9" r="6" class="icon-line"/>
+          <line x1="13.5" y1="13.5" x2="18" y2="18" class="icon-line"/>
+          <line x1="6" y1="9" x2="12" y2="9" class="icon-line"/>
+          <line x1="9" y1="6" x2="9" y2="12" class="icon-line"/>
+        </svg>
+      </div>
+      <h3 class="cap-title">Technical &amp; Programmatic<br>Search Infrastructure</h3>
+      <p class="cap-desc">
+        SEO at enterprise scale requires systems thinking, not blog post calendars.
+        We architect content programs around keyword cluster economics &mdash; calculating
+        expected traffic value, conversion rate by intent tier, and content production
+        cost before a single word is written.
+        <br><br>
+        Technical audits are conducted at crawl infrastructure level: Core Web Vitals,
+        log file analysis, JavaScript rendering behavior, internal PageRank distribution,
+        and crawl budget allocation. We fix the foundations before scaling content.
+      </p>
+      <ul class="cap-list">
+        <li>Technical audit: crawl, rendering, Core Web Vitals, schema</li>
+        <li>Keyword cluster economics &mdash; value-per-click &times; conversion rate</li>
+        <li>Programmatic content at scale via CMS template architecture</li>
+        <li>Link acquisition through digital PR &amp; data-led content assets</li>
+        <li>Entity optimization for AI-assisted search (SGE, Perplexity)</li>
+        <li>Monthly log file analysis &amp; crawl budget reporting</li>
+      </ul>
+      <div class="cap-footer">
+        <a href="services.html" class="cap-link">
+          View Full Capability
+          <span class="cap-link-arrow">&rarr;</span>
+        </a>
+        <div class="label">SEO &middot; TECHNICAL &middot; CONTENT</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── S5: ROI SHOWCASE ─────────────────────── -->
+<section class="roi-section reveal">
+
+  <div class="section-header" style="margin-bottom:40px;">
+    <div class="section-title-block">
+      <div class="label">// ROI Showcase &mdash; Selected Results</div>
+      <h2 class="section-h2" style="margin-top:12px;">
+        Verified outcomes.<br>No rounded numbers.
+      </h2>
+    </div>
+    <div class="section-desc">
+      Hover each card to reveal the attribution dashboard behind these figures.
+      All metrics are audited against CRM closed-won data.
+    </div>
+  </div>
+
+  <div class="roi-grid">
+
+    <div class="roi-card">
+      <div class="roi-front">
+        <div class="roi-client-tag">Nguo &mdash; Premium Apparel, D2C</div>
+        <div class="roi-metric-big">6.2x</div>
+        <div class="roi-metric-sub">Blended ROAS, Q3&ndash;Q4 2024</div>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;max-width:420px;">
+          Restructured a fragmented Meta account running 14 active campaigns with
+          overlapping audiences and no creative testing framework. Rebuilt from zero:
+          single campaign per funnel stage, thumb-stop creative matrix with 3:1 hook
+          variation, and server-side CAPI reducing reported CPA by 31%.
+        </p>
+        <div class="roi-detail-row">
+          <div class="roi-detail-cell">
+            <div class="roi-detail-val">KES 28M</div>
+            <div class="roi-detail-lbl">Revenue Attributed</div>
+          </div>
+          <div class="roi-detail-cell" style="padding-left:20px;">
+            <div class="roi-detail-val">&minus;41%</div>
+            <div class="roi-detail-lbl">CPA Reduction</div>
+          </div>
+          <div class="roi-detail-cell" style="padding-left:20px;">
+            <div class="roi-detail-val">19wk</div>
+            <div class="roi-detail-lbl">Time to Target ROAS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="roi-dashboard">
+        <div class="label" style="margin-bottom:16px;">// Live Attribution Dashboard &mdash; Nguo</div>
+        <div class="dash-row">
+          <div class="dash-bar lo"></div>
+          <div class="dash-bar md"></div>
+          <div class="dash-bar lo"></div>
+          <div class="dash-bar md"></div>
+          <div class="dash-bar hi"></div>
+          <div class="dash-bar hi"></div>
+          <div class="dash-bar md"></div>
+          <div class="dash-bar hi"></div>
+          <div class="dash-bar hi"></div>
+          <div class="dash-bar" style="height:95%"></div>
+          <div class="dash-bar hi"></div>
+          <div class="dash-bar hi"></div>
+        </div>
+        <div class="dash-line"></div>
+        <div class="dash-label-row">
+          <span class="dash-label">Week 1 &mdash; Audit</span>
+          <span class="dash-label">Week 8 &mdash; Rebuild</span>
+          <span class="dash-label">Week 19 &mdash; Target</span>
+        </div>
+        <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--border);padding-top:16px;">
+          <div><div class="dash-label">ROAS AT START</div><div style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--text-primary);margin-top:4px;">1.8x</div></div>
+          <div><div class="dash-label">ROAS AT TARGET</div><div style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--text-primary);margin-top:4px;">6.2x</div></div>
+          <div><div class="dash-label">PLATFORM</div><div style="font-family:var(--mono);font-size:11px;color:var(--text-secondary);margin-top:4px;">Meta + Server-CAPI</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roi-card">
+      <div class="roi-front">
+        <div class="roi-client-tag">Shamba OS &mdash; B2B Agri-Tech</div>
+        <div class="roi-metric-big">&minus;68%</div>
+        <div class="roi-metric-sub">Cost-Per-SQL, 6-Month Period</div>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;max-width:420px;">
+          Inherited a Google Search account with 340 broad-match keywords bleeding budget
+          into non-commercial queries. Rebuilt keyword architecture around 4 intent tiers,
+          deployed exact and phrase match exclusion logic, and introduced LinkedIn
+          retargeting for site visitors with 3+ page sessions. MQL-to-SQL rate
+          improved from 18% to 31% through sequential nurture sequences.
+        </p>
+        <div class="roi-detail-row">
+          <div class="roi-detail-cell">
+            <div class="roi-detail-val">KES 4.5M</div>
+            <div class="roi-detail-lbl">Wasted Spend Recovered</div>
+          </div>
+          <div class="roi-detail-cell" style="padding-left:20px;">
+            <div class="roi-detail-val">31%</div>
+            <div class="roi-detail-lbl">MQL&rarr;SQL Rate</div>
+          </div>
+          <div class="roi-detail-cell" style="padding-left:20px;">
+            <div class="roi-detail-val">KES 55K</div>
+            <div class="roi-detail-lbl">Final Cost Per SQL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="roi-dashboard">
+        <div class="label" style="margin-bottom:16px;">// Pipeline Attribution &mdash; Shamba OS</div>
+        <div class="dash-row">
+          <div class="dash-bar" style="height:85%"></div>
+          <div class="dash-bar hi"></div>
+          <div class="dash-bar" style="height:80%"></div>
+          <div class="dash-bar" style="height:75%"></div>
+          <div class="dash-bar" style="height:65%"></div>
+          <div class="dash-bar" style="height:55%"></div>
+          <div class="dash-bar md"></div>
+          <div class="dash-bar" style="height:42%"></div>
+          <div class="dash-bar" style="height:38%"></div>
+          <div class="dash-bar lo"></div>
+          <div class="dash-bar" style="height:32%"></div>
+        </div>
+        <div class="dash-line"></div>
+        <div class="dash-label-row">
+          <span class="dash-label">Month 1 &mdash; KES 180K SQL</span>
+          <span class="dash-label">Month 4 &mdash; KES 95K SQL</span>
+          <span class="dash-label">Month 6 &mdash; KES 55K SQL</span>
+        </div>
+        <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--border);padding-top:16px;">
+          <div><div class="dash-label">CPL AT START</div><div style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--text-primary);margin-top:4px;">KES 180K</div></div>
+          <div><div class="dash-label">CPL AT END</div><div style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--text-primary);margin-top:4px;">KES 55K</div></div>
+          <div><div class="dash-label">CHANNELS</div><div style="font-family:var(--mono);font-size:11px;color:var(--text-secondary);margin-top:4px;">Google Search + LinkedIn</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── S6: PROCESS PHILOSOPHY ───────────────── -->
+<section class="process-section reveal">
+
+  <div class="section-header" style="margin-bottom:0;padding-bottom:48px;border-bottom:1px solid var(--border);">
+    <div class="section-title-block">
+      <div class="label">// Process Philosophy &mdash; How We Work</div>
+      <h2 class="section-h2" style="margin-top:12px;">
+        Precision before<br>scale. Always.
+      </h2>
+    </div>
+    <div class="section-desc" style="max-width:340px;">
+      We don't launch campaigns to generate data. We generate data first,
+      then deploy capital against verified hypotheses.
+    </div>
+  </div>
+
+  <div class="process-grid" style="margin-top:56px;">
+
+    <div class="process-nav">
+      <div class="process-nav-item active">
+        <span class="pnav-idx">01</span> Discovery &amp; Alignment
+      </div>
+      <div class="process-nav-item">
+        <span class="pnav-idx">02</span> Data Verification
+      </div>
+      <div class="process-nav-item">
+        <span class="pnav-idx">03</span> Infrastructure Build
+      </div>
+      <div class="process-nav-item">
+        <span class="pnav-idx">04</span> Controlled Deployment
+      </div>
+      <div class="process-nav-item">
+        <span class="pnav-idx">05</span> Scale &amp; Compounding
+      </div>
+    </div>
+
+    <div class="process-content">
+
+      <div class="process-block">
+        <div class="process-block-header">
+          <span class="process-block-idx">01 //</span>
+          <h3 class="process-block-title">Discovery &amp; Business Alignment</h3>
+        </div>
+        <p class="process-text">
+          Before any channel strategy is discussed, we conduct a structured discovery sprint
+          that maps your <strong>actual business model</strong> &mdash; not just your marketing goals.
+          This means understanding unit economics: what is your CAC threshold before the business
+          breaks even? What is the LTV:CAC ratio required to justify paid acquisition at scale?
+          What does your sales cycle look like, and where does it create misalignment with
+          last-click attribution?
+        </p>
+        <p class="process-text">
+          Most agencies skip this step and build campaigns against the wrong success metric.
+          We've seen accounts optimising for CPL on a product with a 9-month sales cycle &mdash;
+          a structural mismatch that no amount of bidding strategy adjustment will fix.
+          <strong>Alignment on business outcomes precedes all tactical execution.</strong>
+        </p>
+        <div class="process-specs">
+          <div class="process-spec">
+            <div class="spec-key">Deliverable</div>
+            <div class="spec-val">Business model canvas + paid growth threshold model</div>
+          </div>
+          <div class="process-spec">
+            <div class="spec-key">Duration</div>
+            <div class="spec-val">5&ndash;7 business days with async interviews</div>
+          </div>
+          <div class="process-spec">
+            <div class="spec-key">Data Required</div>
+            <div class="spec-val">CRM export, historical ad account access, P&amp;L summary</div>
+          </div>
+          <div class="process-spec">
+            <div class="spec-key">Output Format</div>
+            <div class="spec-val">Notion workspace + Loom walkthrough + live Q&amp;A session</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-block">
+        <div class="process-block-header">
+          <span class="process-block-idx">02 //</span>
+          <h3 class="process-block-title">Data Infrastructure Verification</h3>
+        </div>
+        <p class="process-text">
+          We audit every measurement layer before spending a single dollar.
+          <strong>Pixel integrity, server-side event parity, GA4 event schema accuracy,
+          CRM data hygiene, and attribution window alignment</strong> are all examined
+          before campaign architecture is finalized.
+        </p>
+        <p class="process-text">
+          Our verification process uses a 47-point audit protocol that cross-references
+          platform-reported conversions against CRM closed-won data. Discrepancies above 15%
+          trigger a tracking rebuild before campaigns go live. We have found misattribution
+          rates exceeding 60% in accounts that believed their data was clean.
+          Every budget decision downstream of bad data is a compounded error.
+        </p>
+        <div class="process-specs">
+          <div class="process-spec">
+            <div class="spec-key">Tools Used</div>
+            <div class="spec-val">Tag Manager, Segment, Postman API testing, GA4 DebugView</div>
+          </div>
+          <div class="process-spec">
+            <div class="spec-key">Verification Standard</div>
+            <div class="spec-val">&lt;10% discrepancy between platform and CRM data</div>
+          </div>
+          <div class="process-spec">
+            <div class="spec-key">Server-Side Stack</div>
+            <div class="spec-val">Meta CAPI + Google Enhanced Conversions + custom webhooks</div>
+          </div>
+          <div class="process-spec">
+            <div class="spec-key">Reporting Infrastructure</div>
+            <div class="spec-val">Looker Studio connected to BigQuery + Supermetrics pipelines</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

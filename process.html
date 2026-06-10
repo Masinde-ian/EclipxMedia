@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eclipxmedia — Process & Methodology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const hdr = await fetch('partials/header.html');
+    document.getElementById('header-placeholder').innerHTML = await hdr.text();
+    if (typeof initTheme === 'function') initTheme();
+    const ftr = await fetch('partials/footer.html');
+    document.getElementById('footer-placeholder').innerHTML = await ftr.text();
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.page-tab').forEach(function(a) {
+      if (a.getAttribute('href') === current) a.classList.add('active');
+    });
+  } catch(e) {
+    console.warn('Could not load header/footer partials.', e);
+  }
+});
+</script>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+
+<section class="proc-hero">
+  <div class="proc-hero-inner">
+    <div class="label">// 03 &mdash; Partnership Workflow &amp; Process</div>
+    <h1 class="proc-hero-h1" style="margin-top:14px;">How we operate.<br>No ambiguity.<br>No surprises.</h1>
+  </div>
+  <div class="proc-hero-inner" style="display:flex;flex-direction:column;gap:28px;position:relative;z-index:1;">
+    <p style="font-size:14px;color:var(--text-secondary);line-height:1.8;">This page documents exactly how an engagement with eclipxmedia unfolds &mdash; from the first audit call to ongoing monthly operations. We publish our process at this level of detail because opacity in agency relationships is a structural problem. Every phase listed below is contractually defined with named deliverables, delivery formats, and timelines. If we miss a deadline, you are entitled to a fee reduction. That clause is in every contract we sign.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);">
+      <div style="padding:16px 20px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);"><div class="label" style="margin-bottom:4px;">Onboarding Speed</div><div style="font-family:var(--display);font-size:18px;font-weight:700;color:var(--text-primary);">14 days</div></div>
+      <div style="padding:16px 20px;border-bottom:1px solid var(--border);"><div class="label" style="margin-bottom:4px;">First Campaign Live</div><div style="font-family:var(--display);font-size:18px;font-weight:700;color:var(--text-primary);">Week 4</div></div>
+      <div style="padding:16px 20px;border-right:1px solid var(--border);"><div class="label" style="margin-bottom:4px;">Reporting Cadence</div><div style="font-family:var(--display);font-size:18px;font-weight:700;color:var(--text-primary);">Weekly</div></div>
+      <div style="padding:16px 20px;"><div class="label" style="margin-bottom:4px;">Contract Structure</div><div style="font-family:var(--display);font-size:18px;font-weight:700;color:var(--text-primary);">Rolling 90-day</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section">
+  <div class="timeline-header">
+    <div class="label">// Partnership Workflow &mdash; Phase Overview</div>
+    <h2 class="section-h2" style="margin-top:10px;">Four phases. Defined outcomes at each gate.</h2>
+  </div>
+  <div class="timeline-track">
+    <div class="timeline-node"><div class="tn-phase"><div class="tn-dot active"></div><div class="tn-label">Phase 01 &mdash; Architecture &amp; Audit</div></div><div class="tn-connector"></div></div>
+    <div class="timeline-node"><div class="tn-phase"><div class="tn-dot active"></div><div class="tn-label">Phase 02 &mdash; Creative Sprints</div></div><div class="tn-connector"></div></div>
+    <div class="timeline-node"><div class="tn-phase"><div class="tn-dot active"></div><div class="tn-label">Phase 03 &mdash; Deployment &amp; Alpha</div></div><div class="tn-connector"></div></div>
+    <div class="timeline-node"><div class="tn-phase"><div class="tn-dot active"></div><div class="tn-label">Phase 04 &mdash; Scale &amp; Optimisation</div></div></div>
+  </div>
+
+  <div class="phase-block">
+    <div class="phase-sidebar">
+      <div class="phase-num">PHASE 01 //</div>
+      <h3 class="phase-title">Architecture &amp; Auditing</h3>
+      <div class="phase-duration">Weeks 1&ndash;2</div>
+      <p style="font-size:12px;color:var(--text-muted);line-height:1.7;">We do not touch your campaigns during this phase. We observe, measure, and document before we change anything. This protects baseline data integrity and ensures that every subsequent performance change is attributable to a specific intervention.</p>
+      <div class="phase-status" style="margin-top:20px;"><div class="live-dot" style="width:5px;height:5px;background:var(--border-bright);"></div><span>No spend changes in Phase 01</span></div>
+    </div>
+    <div class="phase-content">
+      <div>
+        <div class="phase-section-title">What Happens in Phase 01</div>
+        <p class="phase-text">The first two weeks of every engagement are exclusively diagnostic. <strong>We do not adjust bids, restructure campaigns, or launch creative until we have a complete, verified picture of the existing account state.</strong> Days 1&ndash;3: access and instrumentation &mdash; we receive read-only access to all ad platforms, GA4, CRM, and existing reporting infrastructure, then verify that the data we're seeing is accurate. Days 4&ndash;10: the audit itself, structured across four measurement layers. Days 11&ndash;14: synthesis and presentation &mdash; a 40&ndash;80 page Audit Report is produced and walked through in a 90-minute structured session with your team, during which findings are prioritised collectively and the 90-day remediation roadmap is agreed.</p>
+      </div>
+      <div>
+        <div class="phase-section-title">Audit Checklist &mdash; Selected Items From 47-Point Protocol</div>
+        <div class="phase-checklist">
+          <div class="phase-check"><span class="check-idx">L1.01</span><span>Pixel and server-side event verification &mdash; all conversion events cross-referenced against CRM closed-won data for the preceding 90 days. Discrepancy threshold: &lt;10%. Above threshold triggers tracking rebuild as P1 priority.</span></div>
+          <div class="phase-check"><span class="check-idx">L1.02</span><span>GA4 event schema audit &mdash; parameter naming conventions, event sequencing, funnel configuration, and data stream health verified against expected conversion volume from CRM records.</span></div>
+          <div class="phase-check"><span class="check-idx">L1.03</span><span>Attribution window alignment &mdash; platform attribution windows reconciled against actual sales cycle length using CRM stage timing data. Misaligned windows distort reported ROAS and CPL by 20&ndash;60% in B2B accounts.</span></div>
+          <div class="phase-check"><span class="check-idx">L2.01</span><span>Campaign architecture review &mdash; budget allocation logic, bidding strategy by campaign type, audience overlap analysis at ad-set level using platform Audience Overlap tool, exclusion logic integrity check.</span></div>
+          <div class="phase-check"><span class="check-idx">L2.02</span><span>Keyword structure audit (Search accounts) &mdash; match type distribution, negative keyword coverage depth, search term irrelevance rate over trailing 90 days, Quality Score distribution and trend.</span></div>
+          <div class="phase-check"><span class="check-idx">L3.01</span><span>Creative performance analysis &mdash; frequency curves per ad, CTR decay modelling against frequency benchmarks, hook rate measurement where video data is available, creative lifecycle classification.</span></div>
+          <div class="phase-check"><span class="check-idx">L4.01</span><span>Competitive intelligence &mdash; paid share-of-voice across target keywords, organic visibility gap analysis, competitor spend trajectory modelling via Meta Ad Library and SemRush tools.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="phase-section-title">Phase 01 Deliverables</div>
+        <div class="phase-spec-grid">
+          <div class="phase-spec-cell"><div class="psc-key">Primary Deliverable</div><div class="psc-val"><strong>40&ndash;80 page Audit Report</strong> covering all 4 layers, with a prioritised remediation backlog (P1 Critical / P2 High / P3 Medium)</div></div>
+          <div class="phase-spec-cell"><div class="psc-key">Tracking Assessment</div><div class="psc-val">Pixel parity report with CRM reconciliation, signal loss estimate, and full rebuild specification if discrepancy exceeds 15%</div></div>
+          <div class="phase-spec-cell"><div class="psc-key">90-Day Roadmap</div><div class="psc-val">Phased execution plan with defined success criteria and measurement methodology for every initiative, agreed in the Phase 01 review session</div></div>
+          <div class="phase-spec-cell"><div class="psc-key">Delivery Format</div><div class="psc-val">Notion workspace, Loom walkthrough (45&ndash;60 min), live Q&amp;A session with audit lead and assigned account strategist</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block">
+    <div class="phase-sidebar">
+      <div class="phase-num">PHASE 02 //</div>
+      <h3 class="phase-title">Creative Sprints &amp; Asset Generation</h3>
+      <div class="phase-duration">Week 3</div>
+      <p style="font-size:12px;color:var(--text-muted);line-height:1.7;">Creative is built before campaigns launch. We do not launch with placeholder assets and iterate reactively. Every creative unit enters the account with a defined hypothesis and a pre-specified success metric.</p>
+    </div>
+    <div class="phase-content">
+      <div>
+        <div class="phase-section-title">Creative Framework Architecture</div>
+        <p class="phase-text">Week 3 is an intensive creative sprint producing the initial asset matrix for Phase 03 campaigns. <strong>Every creative element is built against a defined hypothesis</strong> &mdash; a prediction about which message, format, or visual approach will outperform alternatives for a specific audience and funnel stage. This means creative is never subjective internally. We can tell you exactly why we chose a particular hook, why we structured a value proposition in a specific order, and what we expect to learn from each variant relative to the others.<br><br>The sprint produces three creative tiers: <em>Challenger</em> concepts (high-risk, high-potential &mdash; format or message innovations with no precedent in the account), <em>Control</em> concepts (validated direct-response frameworks adapted to your brand positioning), and <em>Evergreen</em> concepts (brand-safe, long-lifetime assets for retargeting and retention audiences). Compliance-dependent verticals receive a fourth tier: <em>Approved Control</em> &mdash; pre-cleared templates with variables constrained to compliant ranges, enabling testing without re-triggering review cycles.</p>
+      </div>
+      <div>
+        <div class="phase-section-title">Ad Copy Framework &mdash; Structural Components</div>
+        <div class="phase-checklist">
+          <div class="phase-check"><span class="check-idx">CF.01</span><span><strong>Hook layer (0&ndash;3 seconds / first line):</strong> Three variants per ad &mdash; Pain Hook (lead with the problem the audience already has), Outcome Hook (lead with the result they want), and Curiosity Hook (lead with a pattern interrupt or counterintuitive claim). Hook selection mapped to audience temperature: cold audiences respond more strongly to Outcome; warm retargeting audiences to Pain.</span></div>
+          <div class="phase-check"><span class="check-idx">CF.02</span><span><strong>Value proposition body:</strong> Feature-benefit-proof structure. Each benefit claim is supported by a specific, named data point or client outcome from verified case study output. No generic superlatives ("industry-leading", "world-class"). No claims that cannot be sourced from CRM win data.</span></div>
+          <div class="phase-check"><span class="check-idx">CF.03</span><span><strong>CTA architecture:</strong> Action-specific CTAs mapped to funnel stage &mdash; awareness ("See How It Works"), consideration ("Get the Benchmark Report"), decision ("Book a 20-Minute Audit"). CTAs are tested as controlled variables in isolation from hook and body copy to produce clean data on their independent contribution to conversion rate.</span></div>
+          <div class="phase-check"><span class="check-idx">CF.04</span><span><strong>Visual asset matrix:</strong> 3 format types per concept (static image, carousel, short-form video) &times; 2 aspect ratios (1:1, 9:16). Mobile-first composition on all assets. Text overlay density checked against platform readability benchmarks. Contrast ratios verified for accessibility compliance.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block">
+    <div class="phase-sidebar">
+      <div class="phase-num">PHASE 03 //</div>
+      <h3 class="phase-title">Deployment &amp; Alpha Testing</h3>
+      <div class="phase-duration">Week 4</div>
+      <p style="font-size:12px;color:var(--text-muted);line-height:1.7;">Controlled budget deployment with single-variable test isolation. We learn before we scale. Alpha phase exit requires verified creative controls, confirmed audience economics, and tracking parity below 10% discrepancy.</p>
+    </div>
+    <div class="phase-content">
+      <div>
+        <div class="phase-section-title">Controlled Deployment Protocol</div>
+        <p class="phase-text">Week 4 is the first live spend week. <strong>All campaigns launch at a defined Alpha Budget</strong> &mdash; typically 20&ndash;30% of total monthly budget &mdash; to generate learning data before committing full budget to unvalidated hypotheses. Alpha campaigns run in strict variable isolation: one creative variable tested per campaign, with audience, bid strategy, and placement held constant across all variants. Any performance differential is attributable to the tested variable, not confounded by simultaneous changes.<br><br>Audience architecture deploys across three temperature tiers from Day 1: Cold Prospecting, Warm Retargeting, and Retention. These run independently with audience exclusions enforced to prevent auction overlap. Alpha budget allocation is 60/30/10 (Prospecting/Retargeting/Retention) &mdash; deliberately overweighted toward prospecting to accelerate learning on net-new audiences, where unit economics are most uncertain and most consequential to scale decisions.</p>
+      </div>
+      <div>
+        <div class="phase-section-title">Alpha Testing Decision Framework</div>
+        <div class="phase-checklist">
+          <div class="phase-check"><span class="check-idx">AT.01</span><span><strong>Minimum data threshold:</strong> No optimisation decision is made before 500 impressions per individual ad variant. No budget reallocation before statistical significance is met (p&lt;0.05 using our Bayesian test model, which weights decisions by revenue-per-variant rather than conversion rate alone).</span></div>
+          <div class="phase-check"><span class="check-idx">AT.02</span><span><strong>Weekly kill/scale criteria:</strong> Ads underperforming control by &gt;25% on primary KPI at 1,000 impressions are paused and documented. Ads outperforming by &gt;20% receive incremental budget increase of 20% per iteration to validate performance at scale before full budget commitment.</span></div>
+          <div class="phase-check"><span class="check-idx">AT.03</span><span><strong>Audience test sequencing:</strong> New audience segments introduced one per week during Alpha phase. No more than two audience variables tested simultaneously in any single campaign. Overlap verification run weekly using platform Audience Overlap tool with documented results.</span></div>
+          <div class="phase-check"><span class="check-idx">AT.04</span><span><strong>Alpha exit criteria:</strong> Phase 03 concludes when at least one creative control exists per funnel stage, audience segment economics are verified against target thresholds, and tracking parity is confirmed at &lt;10% CRM discrepancy across all active conversion events.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block">
+    <div class="phase-sidebar">
+      <div class="phase-num">PHASE 04 //</div>
+      <h3 class="phase-title">Scaling &amp; Matrix Optimisation</h3>
+      <div class="phase-duration">Ongoing &mdash; Monthly Sprints</div>
+      <p style="font-size:12px;color:var(--text-muted);line-height:1.7;">Scale is earned by verified economics, applied sequentially, and monitored continuously. We do not apply spend increases to unvalidated hypotheses regardless of external pressure to accelerate growth.</p>
+    </div>
+    <div class="phase-content">
+      <div>
+        <div class="phase-section-title">Automated Scaling Rules &amp; Manual Override Protocol</div>
+        <p class="phase-text">Ongoing management operates on a <strong>rule-based scaling architecture with weekly manual review gates</strong>. Automated rules handle micro-optimisations within defined parameters &mdash; bid adjustments within &plusmn;15% of target, budget pacing corrections within daily windows, ad scheduling adjustments based on verified hourly conversion data &mdash; freeing strategist attention for macro decisions requiring contextual judgment that automated systems cannot replicate.<br><br>Manual override is required for any change exceeding 20% budget adjustment, any new audience introduction, any campaign structure modification, or any creative rotation above the planned cadence. This prevents automation from compounding errors without human review. The weekly sprint Loom exists specifically to assess whether automated rules are behaving as intended and to make manual corrections before they have downstream consequences. Every automated rule is documented in Notion with its trigger logic, expected behaviour, and override conditions before it is activated.</p>
+      </div>
+      <div>
+        <div class="phase-section-title">Ongoing Optimisation Cadence</div>
+        <div class="phase-spec-grid">
+          <div class="phase-spec-cell"><div class="psc-key">Daily Automated</div><div class="psc-val">Bid pacing, budget burn rate correction, frequency cap enforcement, anomaly alerts (CPM spike &gt;30%, conversion drop &gt;25% vs. 7-day average)</div></div>
+          <div class="phase-spec-cell"><div class="psc-key">Weekly Manual</div><div class="psc-val">Creative frequency vs. CTR decay review, audience saturation signals, search term irrelevance rate (Search), Quality Score trend analysis</div></div>
+          <div class="phase-spec-cell"><div class="psc-key">Monthly Strategy</div><div class="psc-val">Channel mix review, budget reallocation against 90-day targets, new test hypothesis generation, competitive landscape update, creative rotation planning</div></div>
+          <div class="phase-spec-cell"><div class="psc-key">Quarterly Review</div><div class="psc-val">Full attribution reconciliation vs. CRM closed-won, roadmap refresh, LTV cohort analysis, channel expansion evaluation, contract renewal or adjustment</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="comms-section reveal">
+  <div class="section-header" style="margin-bottom:0;padding-bottom:36px;border-bottom:1px solid var(--border);">
+    <div><div class="label">// Communications Stack &mdash; How We Interface</div><h2 class="section-h2" style="margin-top:10px;">You will never wonder<br>what is happening in your account.</h2></div>
+    <div class="section-desc">Every communication format is defined in the engagement contract. Nothing is ad hoc. Nothing requires you to chase us for updates. The communication system is designed to eliminate status anxiety without requiring real-time meetings.</div>
+  </div>
+  <div class="comms-grid">
+    <div class="comms-card">
+      <div class="comms-freq">Daily &middot; Automated &middot; 08:00 Local</div>
+      <div class="comms-title">Slack Performance Log</div>
+      <p class="comms-text">Every morning at 08:00 in your timezone, an <strong>automated Slack bot posts a structured performance digest</strong> to your dedicated agency channel. This is a direct data pull from platform APIs via Supermetrics, formatted consistently so you can track day-on-day changes at a glance without interpretation lag or reliance on human availability.</p>
+      <div class="comms-detail-list">
+        <div class="comms-detail">Yesterday's spend vs. daily pacing target</div>
+        <div class="comms-detail">Conversions by platform and campaign</div>
+        <div class="comms-detail">ROAS / CPA vs. 7-day rolling average</div>
+        <div class="comms-detail">Any anomaly flags &mdash; CPM spike, conv. drop</div>
+        <div class="comms-detail">Top-performing ad: clicks, CTR, spend</div>
+        <div class="comms-detail">Frequency alert if any ad exceeds 4.0</div>
+      </div>
+    </div>
+    <div class="comms-card">
+      <div class="comms-freq">Weekly &middot; Async Video &middot; Monday AM</div>
+      <div class="comms-title">Sprint Walkthrough &mdash; Loom</div>
+      <p class="comms-text">Every Monday morning, your account strategist records a <strong>15&ndash;25 minute Loom walkthrough</strong> covering prior week performance, decisions made with rationale, and the current week's planned actions. The walkthrough follows a fixed timestamp structure so you can navigate to relevant sections without watching in full.</p>
+      <div class="comms-detail-list">
+        <div class="comms-detail">00:00 &mdash; Week summary vs. targets</div>
+        <div class="comms-detail">03:00 &mdash; What we changed and why</div>
+        <div class="comms-detail">08:00 &mdash; Creative performance &amp; rotation plan</div>
+        <div class="comms-detail">13:00 &mdash; Audience and targeting updates</div>
+        <div class="comms-detail">18:00 &mdash; This week's planned actions</div>
+        <div class="comms-detail">22:00 &mdash; Open questions requiring client input</div>
+      </div>
+    </div>
+    <div class="comms-card">
+      <div class="comms-freq">Monthly &middot; Live &middot; First Tuesday</div>
+      <div class="comms-title">Strategy Alignment Session</div>
+      <p class="comms-text">A <strong>60-minute structured meeting</strong> on the first Tuesday of each month. This is the only recurring live meeting in the engagement. No time is spent on status updates &mdash; those are covered by daily logs and weekly Looms. The session exists exclusively for strategic decisions that require real-time discussion and client sign-off.</p>
+      <div class="comms-detail-list">
+        <div class="comms-detail">Month performance vs. 90-day roadmap</div>
+        <div class="comms-detail">Attribution reconciliation vs. CRM data</div>
+        <div class="comms-detail">Budget reallocation recommendations</div>
+        <div class="comms-detail">New test hypotheses requiring sign-off</div>
+        <div class="comms-detail">Roadmap update for following 30 days</div>
+        <div class="comms-detail">Any client-side blockers to resolve</div>
+      </div>
+    </div>
+  </div>
+  <div class="comms-principles">
+    <div class="comms-principle"><span class="cp-idx">P.01</span><span class="cp-text"><strong>No status update meetings.</strong> All status information is delivered async. Live time is reserved for decisions, not updates.</span></div>
+    <div class="comms-principle"><span class="cp-idx">P.02</span><span class="cp-text"><strong>All data is primary-sourced.</strong> We never present manually compiled data without showing the raw source. All dashboards link directly to underlying data.</span></div>
+    <div class="comms-principle"><span class="cp-idx">P.03</span><span class="cp-text"><strong>No vanity metric reporting.</strong> If a metric does not connect to revenue or a defined leading indicator, it does not appear in our reports. Impressions alone are not a deliverable.</span></div>
+    <div class="comms-principle"><span class="cp-idx">P.04</span><span class="cp-text"><strong>Bad news first.</strong> We surface underperformance immediately in the daily Slack log &mdash; the morning it becomes visible &mdash; not at the end-of-month review when damage has compounded.</span></div>
+    <div class="comms-principle"><span class="cp-idx">P.05</span><span class="cp-text"><strong>Written rationale for every change.</strong> Every campaign modification is logged in Notion with the reason, expected outcome, and measurement criteria before it is executed.</span></div>
+    <div class="comms-principle"><span class="cp-idx">P.06</span><span class="cp-text"><strong>You own everything.</strong> Ad accounts, creative assets, dashboards, and data pipelines are all in client-owned infrastructure. Engagement end means we remove our access. No leverage, no lock-in.</span></div>
+  </div>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

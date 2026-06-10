@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eclipxmedia — Case Studies & Proof</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const hdr = await fetch('partials/header.html');
+    document.getElementById('header-placeholder').innerHTML = await hdr.text();
+    if (typeof initTheme === 'function') initTheme();
+    const ftr = await fetch('partials/footer.html');
+    document.getElementById('footer-placeholder').innerHTML = await ftr.text();
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.page-tab').forEach(function(a) {
+      if (a.getAttribute('href') === current) a.classList.add('active');
+    });
+  } catch(e) {
+    console.warn('Could not load header/footer partials.', e);
+  }
+});
+</script>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+
+<section class="cs-hero">
+  <div class="proc-hero-inner">
+    <div class="label">// 02 &mdash; Case Studies &amp; Proof</div>
+    <h1 class="cs-hero-h1">Results that exist<br>in spreadsheets,<br>not decks.</h1>
+  </div>
+  <div class="cs-hero-right">
+    <p>Every outcome documented here is cross-referenced against CRM closed-won data, ad platform attribution, and in several cases, third-party audited P&amp;L statements. We do not round numbers upward. We do not cherry-pick time windows. We do not attribute results to channels that did not generate them.</p>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <div><div class="label" style="margin-bottom:4px;">Active Accounts</div><div style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--text-primary);letter-spacing:-0.02em;">24</div></div>
+      <div><div class="label" style="margin-bottom:4px;">Published Case Studies</div><div style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--text-primary);letter-spacing:-0.02em;">8</div></div>
+      <div><div class="label" style="margin-bottom:4px;">Avg. ROAS Across Cohort</div><div style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--text-primary);letter-spacing:-0.02em;">4.7x</div></div>
+    </div>
+  </div>
+</section>
+<div class="cs-filter-bar">
+  <div class="cs-filter-label">Filter By</div>
+  <button class="cs-filter-btn active" onclick="filterCS('all',this)">All Case Studies</button>
+  <button class="cs-filter-btn" onclick="filterCS('saas',this)">B2B SaaS</button>
+  <button class="cs-filter-btn" onclick="filterCS('ecomm',this)">Enterprise E-Commerce</button>
+  <button class="cs-filter-btn" onclick="filterCS('leadgen',this)">Lead Generation</button>
+  <button class="cs-filter-btn" onclick="filterCS('seo',this)">Organic / SEO</button>
+</div>
+
+<div class="cs-card" data-category="saas">
+  <div class="cs-card-header">
+    <div class="cs-card-idx">CS &mdash; 001</div>
+    <div class="cs-card-meta">
+      <div class="cs-card-tags"><span class="cs-tag primary">B2B Agri-Tech</span><span class="cs-tag">Seed · KES 150M ARR</span><span class="cs-tag">Google Search + LinkedIn</span><span class="cs-tag">18-Month Engagement</span></div>
+      <h2 class="cs-card-title">Shamba OS &mdash; Pipeline Attribution Rebuild &amp; SQL Cost Reduction</h2>
+      <p class="cs-card-subtitle">Agricultural technology SaaS platform serving Kenyan cooperatives, average contract value KES 500,000 ARR. Entered engagement with a fragmented paid search account, no MQL scoring, and attribution data showing a 58% discrepancy versus CRM pipeline.</p>
+    </div>
+    <div class="cs-card-status"><div class="label" style="margin-bottom:6px;">Engagement Status</div><div class="live-indicator"><div class="live-dot"></div><span style="font-size:10px;font-family:var(--mono);letter-spacing:0.08em;">Active &mdash; Month 22</span></div></div>
+  </div>
+  <div class="cs-metrics-row">
+    <div class="cs-metric"><div class="cs-metric-val">&minus;68%</div><div class="cs-metric-lbl">Cost Per SQL</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">+312%</div><div class="cs-metric-lbl">YoY Pipeline Value</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">31%</div><div class="cs-metric-lbl">MQL&rarr;SQL Rate</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">KES 4.5M</div><div class="cs-metric-lbl">Wasted Spend Recovered</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">6mo</div><div class="cs-metric-lbl">Time to Target SQL Cost</div></div>
+  </div>
+  <div class="cs-body">
+    <div class="cs-body-spacer"></div>
+    <div class="cs-body-text">
+      <div>
+        <div class="cs-block-title">Technical Challenge</div>
+        <p class="cs-block-content">Shamba OS's Google Search account contained <strong>340 active keywords</strong>, the majority on broad match, with no negative keyword list maintained in over 14 months. Search term reports showed 62% of impressions serving against non-commercial queries. Simultaneously, LinkedIn retargeting targeted all website visitors with a single ad format &mdash; no distinction between a pricing page visitor and a blog reader. The conversion tracking stack relied exclusively on a browser-based LinkedIn Insight Tag with no server-side backup; in an audience of predominantly corporate IT environments with aggressive ad-blockers, signal loss was estimated at 38%. MQL scoring was based on form fill completion only, with no behavioural layer, meaning sales received leads from search terms with zero historical close rate.</p>
+        <div class="cs-tech-list"><span class="cs-tech-tag">Google Ads &mdash; Broad Match Audit</span><span class="cs-tech-tag">LinkedIn Insight Tag</span><span class="cs-tech-tag">HubSpot CRM</span><span class="cs-tech-tag">No Negative Keyword Management</span><span class="cs-tech-tag">Browser-Side Only Tracking</span><span class="cs-tech-tag">58% Attribution Discrepancy</span></div>
+      </div>
+      <div>
+        <div class="cs-block-title">Strategy Deployed</div>
+        <p class="cs-block-content"><strong>Phase 1:</strong> Full keyword architecture rebuild. Collapsed 340 keywords to 94 tightly grouped exact and phrase-match terms across 4 intent tiers. Deployed a 600-term negative keyword list built from 18 months of search term data. Bid strategies shifted to Target CPA per intent tier with separate conversion actions mapped to pipeline stage.<br><br><strong>Phase 2:</strong> LinkedIn retargeting segmented into 5 audience pools by page depth and session time. Conversation Ads introduced for decision-maker titles against a matched audience built from CRM closed-won firmographic data.<br><br><strong>Phase 3:</strong> Server-side LinkedIn CAPI implementation via sGTM, reducing signal loss from 38% to estimated 8%. HubSpot lead scoring rebuilt with behavioural data including page sequence, pricing page visits, return session count, and asset downloads. Sales received only leads meeting a composite score threshold, reducing SDR noise by 44%.</p>
+        <div class="cs-tech-list"><span class="cs-tech-tag">sGTM + LinkedIn CAPI</span><span class="cs-tech-tag">Intent-Tier Keyword Architecture</span><span class="cs-tech-tag">5-Segment Retargeting Matrix</span><span class="cs-tech-tag">HubSpot Behavioural Scoring</span><span class="cs-tech-tag">Conversation Ads ABM</span><span class="cs-tech-tag">Looker Studio Pipeline Dashboard</span></div>
+      </div>
+      <div>
+        <div class="cs-block-title">Final Quantifiable Outcome</div>
+        <p class="cs-block-content">At the 6-month mark, cost-per-SQL declined from <strong>KES 180,000 to KES 55,000</strong> &mdash; a 68% reduction verified against CRM closed-won records. Monthly SQL volume increased from 8 to 19 despite total ad spend remaining flat at KES 700,000/month. MQL-to-SQL rate improved from 18% to 31%. Pipeline value generated in Month 6 alone exceeded the total pipeline generated across all of Q1 at engagement start. At Month 18, the account is scaling toward a KES 1M/month target spend with maintained SQL economics.</p>
+      </div>
+    </div>
+    <div class="cs-dash-panel">
+      <div class="cs-screenshot"><div class="cs-screenshot-label">Dashboard Placeholder<br>Looker Studio<br>Pipeline Attribution View</div></div>
+      <div class="cs-dash-mock">
+        <div class="cs-dash-mock-label">SQL Cost Trend &mdash; 6 Month</div>
+        <div class="cs-spark"><div class="cs-spark-bar" style="height:100%"></div><div class="cs-spark-bar" style="height:85%"></div><div class="cs-spark-bar" style="height:72%"></div><div class="cs-spark-bar" style="height:58%"></div><div class="cs-spark-bar" style="height:42%"></div><div class="cs-spark-bar" style="height:32%"></div><div class="cs-spark-bar" style="height:30%"></div></div>
+        <div class="cs-dash-kpi-row"><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">KES 180K</div><div class="cs-dash-kpi-lbl">Start</div></div><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">KES 55K</div><div class="cs-dash-kpi-lbl">End</div></div><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">&minus;68%</div><div class="cs-dash-kpi-lbl">Delta</div></div></div>
+      </div>
+      <div class="cs-dash-mock">
+        <div class="cs-dash-mock-label">Monthly SQL Volume</div>
+        <div class="cs-spark"><div class="cs-spark-bar" style="height:42%"></div><div class="cs-spark-bar" style="height:55%"></div><div class="cs-spark-bar" style="height:68%"></div><div class="cs-spark-bar" style="height:80%"></div><div class="cs-spark-bar" style="height:92%"></div><div class="cs-spark-bar" style="height:100%"></div></div>
+        <div class="cs-dash-kpi-row"><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">8</div><div class="cs-dash-kpi-lbl">Start/mo</div></div><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">19</div><div class="cs-dash-kpi-lbl">End/mo</div></div><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">+137%</div><div class="cs-dash-kpi-lbl">Volume</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cs-card" data-category="ecomm">
+  <div class="cs-card-header">
+    <div class="cs-card-idx">CS &mdash; 002</div>
+    <div class="cs-card-meta">
+      <div class="cs-card-tags"><span class="cs-tag primary">DTC E-Commerce</span><span class="cs-tag">KES 180M Annual Revenue</span><span class="cs-tag">Meta + Google + TikTok</span><span class="cs-tag">14-Month Engagement</span></div>
+      <h2 class="cs-card-title">Nguo &mdash; Full-Funnel Paid Rebuild &amp; Creative Testing Infrastructure</h2>
+      <p class="cs-card-subtitle">Premium Kenyan apparel brand, direct-to-consumer, average order value KES 8,500. Entered engagement running 14 simultaneous Meta campaigns with overlapping audiences, no creative testing methodology, and a ROAS of 1.8x against a breakeven threshold of 2.6x.</p>
+    </div>
+    <div class="cs-card-status"><div class="label" style="margin-bottom:6px;">Status</div><div class="live-indicator"><div class="live-dot"></div><span style="font-size:10px;font-family:var(--mono);">Active &mdash; Month 16</span></div></div>
+  </div>
+  <div class="cs-metrics-row">
+    <div class="cs-metric"><div class="cs-metric-val">6.2x</div><div class="cs-metric-lbl">Blended ROAS</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">&minus;41%</div><div class="cs-metric-lbl">Blended CPA</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">KES 28M</div><div class="cs-metric-lbl">Revenue Q3&ndash;Q4</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">+178%</div><div class="cs-metric-lbl">New Customer Acq.</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">19wk</div><div class="cs-metric-lbl">Time to Target ROAS</div></div>
+  </div>
+  <div class="cs-body">
+    <div class="cs-body-spacer"></div>
+    <div class="cs-body-text">
+      <div>
+        <div class="cs-block-title">Technical Challenge</div>
+        <p class="cs-block-content">The Meta account contained <strong>14 active campaigns with no coherent segmentation</strong> &mdash; prospecting and retargeting audiences overlapped across 9 of 14 campaigns, meaning the platform competed with itself in the auction and artificially inflated CPMs. The pixel was browser-based only, with no server-side CAPI, resulting in estimated 28&ndash;34% event loss post-iOS 14.5. Purchase events fired inconsistently: audit revealed duplicate purchase fires on ~19% of transactions, overstating reported ROAS by an estimated 0.6x. The top-spending ad had run for 11 months without a controlled variant. Frequency: 8.4 in the 30-day window. TikTok generated zero attributable conversions against KES 55,000 monthly spend.</p>
+        <div class="cs-tech-list"><span class="cs-tech-tag">14 Overlapping Campaigns</span><span class="cs-tech-tag">No Server-Side CAPI</span><span class="cs-tech-tag">19% Duplicate Purchase Fires</span><span class="cs-tech-tag">Frequency 8.4</span><span class="cs-tech-tag">28&ndash;34% Event Loss</span></div>
+      </div>
+      <div>
+        <div class="cs-block-title">Strategy Deployed</div>
+        <p class="cs-block-content"><strong>Week 1:</strong> Deployed Meta CAPI via sGTM with event deduplication logic using a composite event_id. Purchase event parity confirmed at 94% signal match. Duplicate pixel fires eliminated via GTM trigger sequencing.<br><br><strong>Weeks 2&ndash;4:</strong> Collapsed 14 campaigns to 3: Cold Prospecting (Advantage+ creative), Warm Retargeting (1&ndash;7 day site visitors segmented by product page depth), and Retention (purchasers 1&ndash;90 days, cross-sell sequences). Audience exclusion logic enforced &mdash; zero overlap verified.<br><br><strong>Weeks 4&ndash;8:</strong> 3&times;3 creative test matrix deployed: 3 hook variants &times; 3 value proposition framings. Each ad ran at KES 3,000/day with success criteria defined in advance (CTR &gt;2.8%, ROAS &gt;3.0x at 500 impression minimum). TikTok rebuilt with Spark Ads using UGC from top 12% of customers by LTV.</p>
+        <div class="cs-tech-list"><span class="cs-tech-tag">Meta CAPI via sGTM</span><span class="cs-tech-tag">Event Deduplication</span><span class="cs-tech-tag">3-Campaign Structure</span><span class="cs-tech-tag">3&times;3 Creative Matrix</span><span class="cs-tech-tag">TikTok Spark Ads + UGC</span></div>
+      </div>
+      <div>
+        <div class="cs-block-title">Final Quantifiable Outcome</div>
+        <p class="cs-block-content">At Week 19, blended ROAS reached <strong>6.2x</strong> against a breakeven of 2.6x. CPA declined 41% from KES 780 to KES 460. Creative testing produced 11 winning ad concepts over 14 months with documented average lifespan of 6.3 weeks. New customer acquisition increased 178% YoY measured against CRM first-purchase records. TikTok contributed 14% of total new customer acquisition in Month 12 &mdash; a channel that had previously generated zero measurable return.</p>
+      </div>
+    </div>
+    <div class="cs-dash-panel">
+      <div class="cs-screenshot"><div class="cs-screenshot-label">Dashboard Placeholder<br>Meta Ads Manager<br>Campaign Structure View</div></div>
+      <div class="cs-dash-mock">
+        <div class="cs-dash-mock-label">ROAS Trend &mdash; 19 Weeks</div>
+        <div class="cs-spark"><div class="cs-spark-bar" style="height:29%"></div><div class="cs-spark-bar" style="height:38%"></div><div class="cs-spark-bar" style="height:50%"></div><div class="cs-spark-bar" style="height:62%"></div><div class="cs-spark-bar" style="height:72%"></div><div class="cs-spark-bar" style="height:82%"></div><div class="cs-spark-bar" style="height:92%"></div><div class="cs-spark-bar" style="height:100%"></div></div>
+        <div class="cs-dash-kpi-row"><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">1.8x</div><div class="cs-dash-kpi-lbl">Start</div></div><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">6.2x</div><div class="cs-dash-kpi-lbl">End</div></div><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">+244%</div><div class="cs-dash-kpi-lbl">Gain</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cs-card" data-category="leadgen">
+  <div class="cs-card-header">
+    <div class="cs-card-idx">CS &mdash; 003</div>
+    <div class="cs-card-meta">
+      <div class="cs-card-tags"><span class="cs-tag primary">B2B Lead Generation</span><span class="cs-tag">Financial Services · CMA Regulated</span><span class="cs-tag">Google Search + SEO</span><span class="cs-tag">24-Month Engagement</span></div>
+      <h2 class="cs-card-title">Pesa Capital &mdash; Regulated Financial Lead Infrastructure &amp; Organic Authority Build</h2>
+      <p class="cs-card-subtitle">Nairobi-based independent financial advisory, CMA-regulated. Average client value KES 3.5M lifetime. Entered engagement with zero organic visibility, a single high-CPL Google Search campaign, and no content infrastructure to support a 3&ndash;9 month purchase consideration cycle.</p>
+    </div>
+    <div class="cs-card-status"><div class="label" style="margin-bottom:6px;">Status</div><div style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Completed &mdash; Month 24</div></div>
+  </div>
+  <div class="cs-metrics-row">
+    <div class="cs-metric"><div class="cs-metric-val">+520%</div><div class="cs-metric-lbl">Organic Traffic YoY</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">&minus;53%</div><div class="cs-metric-lbl">Blended CPL</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">47</div><div class="cs-metric-lbl">Page-1 Rankings</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">KES 28M</div><div class="cs-metric-lbl">Pipeline Year 2</div></div>
+    <div class="cs-metric"><div class="cs-metric-val">DR 14&rarr;41</div><div class="cs-metric-lbl">Domain Rating Gain</div></div>
+  </div>
+  <div class="cs-body">
+    <div class="cs-body-spacer"></div>
+    <div class="cs-body-text">
+      <div>
+        <div class="cs-block-title">Technical Challenge</div>
+        <p class="cs-block-content">CMA regulation created compounding constraints: ad copy required compliance sign-off, restricting creative testing velocity; certain keyword categories carried YMYL algorithmic sensitivity. The standard acquisition funnel was misaligned with a <strong>3&ndash;9 month consideration cycle</strong> during which prospects research extensively before self-identifying. The existing Google Search campaign targeted high-intent terms exclusively at KES 280&ndash;490 CPCs, producing 4&ndash;6 leads per month at KES 11,600 CPL. Domain Rating was 14, content infrastructure was non-existent, and no strategy existed to intercept the research phase of the buyer journey.</p>
+        <div class="cs-tech-list"><span class="cs-tech-tag">CMA Compliance Constraints</span><span class="cs-tech-tag">3&ndash;9 Month Consideration Cycle</span><span class="cs-tech-tag">KES 11,600 Cost Per Lead</span><span class="cs-tech-tag">1.4% Landing Page CVR</span><span class="cs-tech-tag">Domain Rating 14</span></div>
+      </div>
+      <div>
+        <div class="cs-block-title">Strategy Deployed</div>
+        <p class="cs-block-content"><strong>Months 1&ndash;3:</strong> Landing page rebuilt under compliance framework. Split-tested 3 variants; winner converted at 3.1% (121% improvement). Paid search expanded to mid-funnel research terms with content-asset CTAs, reducing cost-per-engagement from KES 11,600 to KES 4,050.<br><br><strong>Months 3&ndash;12:</strong> Keyword cluster model built across 6 topic pillars. 42 long-form articles produced under compliance framework, targeting informational terms with DR-adjusted ranking probability above 60%. Digital PR generated 18 placements in Kenyan financial media, producing 24 linking root domains and lifting DR from 14 to 41.<br><br><strong>Months 12&ndash;24:</strong> Organic traffic converting via newsletter to a 12-email nurture sequence, moving subscribers to consultation over an average 4.2-month email engagement period. Blended CPL declined 53% as organic channel scale offset paid dependency.</p>
+        <div class="cs-tech-list"><span class="cs-tech-tag">Compliance-Cleared Landing Pages</span><span class="cs-tech-tag">Pillar Content Architecture</span><span class="cs-tech-tag">Digital PR &mdash; 18 Placements</span><span class="cs-tech-tag">12-Email Nurture Sequence</span><span class="cs-tech-tag">DR 14 &rarr; 41</span><span class="cs-tech-tag">Klaviyo + HubSpot</span></div>
+      </div>
+      <div>
+        <div class="cs-block-title">Final Quantifiable Outcome</div>
+        <p class="cs-block-content">By Month 24, organic search delivered <strong>62% of total qualified consultations</strong> at an amortised CPL of KES 2,450 vs. paid channel's KES 5,500. 47 target keywords ranked Page 1. Total pipeline in Year 2 reached KES 28M against a total agency investment of KES 2.4M &mdash; an 11.7x return on marketing investment at pipeline level, before accounting for a 34% average close rate. Organic traffic in Month 24 was 520% above Month 1 baseline with no additional content investment in the final quarter.</p>
+      </div>
+    </div>
+    <div class="cs-dash-panel">
+      <div class="cs-screenshot"><div class="cs-screenshot-label">Dashboard Placeholder<br>GSC + Looker Studio<br>Organic Growth View</div></div>
+      <div class="cs-dash-mock">
+        <div class="cs-dash-mock-label">Organic Traffic &mdash; 24 Months</div>
+        <div class="cs-spark"><div class="cs-spark-bar" style="height:10%"></div><div class="cs-spark-bar" style="height:18%"></div><div class="cs-spark-bar" style="height:28%"></div><div class="cs-spark-bar" style="height:40%"></div><div class="cs-spark-bar" style="height:55%"></div><div class="cs-spark-bar" style="height:70%"></div><div class="cs-spark-bar" style="height:85%"></div><div class="cs-spark-bar" style="height:100%"></div></div>
+        <div class="cs-dash-kpi-row"><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">DR 14</div><div class="cs-dash-kpi-lbl">Start</div></div><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">DR 41</div><div class="cs-dash-kpi-lbl">Mo. 12</div></div><div class="cs-dash-kpi"><div class="cs-dash-kpi-val">+520%</div><div class="cs-dash-kpi-lbl">Traffic</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="vld-section reveal">
+  <div class="vld-header">
+    <div><div class="label">// Portfolio Performance Index &mdash; Aggregated &amp; Anonymised</div><h2 class="section-h2" style="margin-top:10px;">Live portfolio metrics.<br>Updated every 24 hours.</h2></div>
+    <div style="text-align:right;"><div class="live-indicator"><div class="live-dot"></div><span>Data synced via Supermetrics pipeline</span></div><div class="label" style="margin-top:8px;">Last sync: <span id="sync-time" class="mono">--:--</span></div></div>
+  </div>
+  <div class="vld-strip">
+    <div class="vld-cell"><div class="vld-val" data-count="15" data-suffix="B+" data-prefix="KES ">KES 0</div><div class="vld-lbl">Total Spend Managed</div><div class="vld-delta">&uarr; Cumulative, all time</div></div>
+    <div class="vld-cell"><div class="vld-val" data-count="4.7" data-suffix="x">0x</div><div class="vld-lbl">Portfolio Avg. ROAS</div><div class="vld-delta">&uarr; +0.3x vs prior 12mo cohort</div></div>
+    <div class="vld-cell"><div class="vld-val" data-count="94" data-suffix="%">0%</div><div class="vld-lbl">12-Month Retention Rate</div><div class="vld-delta">Industry benchmark: 62%</div></div>
+    <div class="vld-cell"><div class="vld-val" data-count="24" data-suffix="">0</div><div class="vld-lbl">Active Accounts</div><div class="vld-delta">Across 6 verticals</div></div>
+    <div class="vld-cell"><div class="vld-val" data-count="38" data-suffix="%">0%</div><div class="vld-lbl">Avg. CPA Reduction</div><div class="vld-delta">Measured at 6-month mark</div></div>
+  </div>
+  <div class="vld-chart-area">
+    <div class="vld-chart-header"><div class="vld-chart-title">Portfolio Blended ROAS Index &mdash; Rolling 12 Months</div><div class="label">All accounts &middot; Weighted by spend volume</div></div>
+    <div class="vld-chart-canvas"><div class="vld-chart-bars"><div class="vld-chart-bar" style="height:52%"></div><div class="vld-chart-bar" style="height:55%"></div><div class="vld-chart-bar" style="height:62%"></div><div class="vld-chart-bar" style="height:65%"></div><div class="vld-chart-bar" style="height:70%"></div><div class="vld-chart-bar highlight" style="height:74%"></div><div class="vld-chart-bar" style="height:72%"></div><div class="vld-chart-bar" style="height:78%"></div><div class="vld-chart-bar highlight" style="height:84%"></div><div class="vld-chart-bar highlight" style="height:90%"></div><div class="vld-chart-bar" style="height:88%"></div><div class="vld-chart-bar highlight" style="height:94%"></div><div class="vld-chart-bar" style="height:92%"></div><div class="vld-chart-bar highlight" style="height:100%"></div></div></div>
+  </div>
+  <div class="vld-footnote"><div class="label">Data sourced from Supermetrics API &middot; Anonymised &middot; Index represents relative ROAS trajectory only</div><div class="label">Methodology available on request</div></div>
+</section>
+
+<section class="testi-section reveal">
+  <div class="section-header" style="margin-bottom:0;"><div><div class="label">// Executive Testimonials &mdash; Verified</div><h2 class="section-h2" style="margin-top:10px;">From the operators<br>who measure everything.</h2></div><div class="section-desc">Every quote is attributed to a named individual. LinkedIn profile references provided for independent verification. No composite testimonials. No anonymised sources.</div></div>
+  <div class="testi-grid">
+    <div class="testi-row">
+      <div class="testi-quote-cell">
+        <div class="testi-mark">"</div>
+        <p class="testi-text">We had worked with two previous agencies who both told us our attribution data was clean. eclipxmedia's first audit identified a <strong>58% discrepancy between what our CRM showed as closed-won revenue and what our ad platforms were claiming to have generated.</strong> That single finding changed every budget decision we had been making for 14 months. The rebuild they executed wasn't just technical &mdash; it was a complete re-education of our internal marketing team on what trustworthy data looks like. Twelve months later, we have a pipeline attribution model our CFO will sign off on. What differentiates eclipxmedia is that they refused to let us celebrate metrics that didn't connect to revenue. When our MQL volume doubled in Month 3, they told us immediately that MQL volume was the wrong metric to be celebrating and redirected focus to cost-per-SQL. That kind of intellectual honesty is genuinely rare in this industry.</p>
+        <div class="testi-attribution"><div class="testi-name">Wanjiku Kamau</div><div class="testi-role">Chief Marketing Officer &middot; Shamba OS &middot; Seed &middot; KES 150M ARR</div><a href="#" class="testi-verify"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" stroke="currentColor" stroke-width="1.5"/><path d="M4 6L5.5 7.5L8 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>Verify on LinkedIn</a></div>
+      </div>
+      <div class="testi-meta-cell">
+        <div class="testi-company-block"><div class="testi-company-name">Shamba OS</div><div class="testi-company-desc">Agri-tech SaaS platform. Seed stage. Kenyan cooperatives. ACV KES 500,000.</div></div>
+        <div><div class="testi-result-box"><div class="testi-result-val">&minus;68%</div><div class="testi-result-lbl">Cost Per SQL</div></div><div class="testi-result-box" style="margin-top:8px;"><div class="testi-result-val">+312%</div><div class="testi-result-lbl">YoY Pipeline Value</div></div></div>
+      </div>
+    </div>
+    <div class="testi-row">
+      <div class="testi-meta-cell">
+        <div class="testi-company-block"><div class="testi-company-name">Nguo</div><div class="testi-company-desc">Premium Kenyan DTC apparel. KES 180M annual revenue. AOV KES 8,500.</div></div>
+        <div><div class="testi-result-box"><div class="testi-result-val">6.2x</div><div class="testi-result-lbl">Blended ROAS at Month 19</div></div><div class="testi-result-box" style="margin-top:8px;"><div class="testi-result-val">&minus;41%</div><div class="testi-result-lbl">Blended CPA Reduction</div></div></div>
+      </div>
+      <div class="testi-quote-cell">
+        <div class="testi-mark">"</div>
+        <p class="testi-text">I have a background in finance. I came to every agency meeting with a spreadsheet of metrics I expected to see and grilled every agency on their attribution methodology before I would let them touch our account. eclipxmedia were the only agency that <strong>proactively told me our existing ROAS figures were unreliable before I had even asked</strong> &mdash; they found the duplicate pixel fires in the discovery call. The creative testing infrastructure they built changed how we think about brand investment entirely. We now have a documented library of 23 tested creative hypotheses with statistically significant outcomes. We know that lifestyle imagery outperforms product-only by 34% in cold prospecting. <strong>These are not guesses. These are measured findings from controlled tests.</strong> No agency had ever given us anything like that before.</p>
+        <div class="testi-attribution"><div class="testi-name">Kamau Njoroge</div><div class="testi-role">Founder &amp; CEO &middot; Nguo &middot; KES 180M Annual Revenue</div><a href="#" class="testi-verify"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" stroke="currentColor" stroke-width="1.5"/><path d="M4 6L5.5 7.5L8 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>Verify on LinkedIn</a></div>
+      </div>
+    </div>
+    <div class="testi-row">
+      <div class="testi-quote-cell">
+        <div class="testi-mark">"</div>
+        <p class="testi-text">Financial services marketing is an environment where most agencies fail because they treat compliance as a constraint rather than a design parameter. eclipxmedia <strong>built our entire content and paid strategy around the compliance framework from day one</strong> &mdash; they had reviewed our CMA permissions before our second meeting. The 24-month organic strategy they delivered has become a genuine business asset. We have 47 Page-1 keyword rankings covering the full research journey of our ideal client. <strong>The content is not just generating leads &mdash; it is pre-qualifying them.</strong> Our close rate on organic search leads is 41%, compared to 27% on paid. That differential compounds materially when you're closing KES 3.5M average client engagements.</p>
+        <div class="testi-attribution"><div class="testi-name">Fatima Hassan</div><div class="testi-role">Managing Director &middot; Pesa Capital &middot; CMA Regulated &middot; Nairobi</div><a href="#" class="testi-verify"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" stroke="currentColor" stroke-width="1.5"/><path d="M4 6L5.5 7.5L8 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>Verify on LinkedIn</a></div>
+      </div>
+      <div class="testi-meta-cell">
+        <div class="testi-company-block"><div class="testi-company-name">Pesa Capital</div><div class="testi-company-desc">CMA-regulated financial advisory. Nairobi. ACV KES 3.5M. 3&ndash;9 month sales cycle.</div></div>
+        <div><div class="testi-result-box"><div class="testi-result-val">+520%</div><div class="testi-result-lbl">Organic Traffic &mdash; 24 Months</div></div><div class="testi-result-box" style="margin-top:8px;"><div class="testi-result-val">KES 28M</div><div class="testi-result-lbl">Pipeline Generated Year 2</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

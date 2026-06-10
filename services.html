@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eclipxmedia — Services & Capabilities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const hdr = await fetch('partials/header.html');
+    document.getElementById('header-placeholder').innerHTML = await hdr.text();
+    if (typeof initTheme === 'function') initTheme();
+    const ftr = await fetch('partials/footer.html');
+    document.getElementById('footer-placeholder').innerHTML = await ftr.text();
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.page-tab').forEach(function(a) {
+      if (a.getAttribute('href') === current) a.classList.add('active');
+    });
+  } catch(e) {
+    console.warn('Could not load header/footer partials.', e);
+  }
+});
+</script>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+
+<!-- ─── S1: CAPABILITIES HERO ────────────────── -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+
+    <div class="svc-hero-top">
+      <div>
+        <div class="svc-index-token">
+          <span>01</span>
+          <span style="color:var(--border-bright)">//</span>
+          <span>WHAT WE EXECUTE</span>
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div class="label">Last Updated</div>
+        <div class="mono" style="font-size:11px;color:var(--text-secondary);margin-top:4px;">Q1 2025 &mdash; Capability Stack v4.2</div>
+      </div>
+    </div>
+
+    <h1 class="svc-hero-h1">
+      Scientific optimization<br>
+      for every revenue lever<br>
+      you're underutilizing.
+    </h1>
+
+    <p class="svc-hero-p">
+      This is a complete inventory of the capabilities we deploy, the technology
+      infrastructure we build on, and the exact deliverables you receive.
+      We publish this level of specificity deliberately: <strong>vague agency service pages
+      exist to obscure the absence of depth.</strong> Every capability listed here is executed
+      in-house by specialists who work exclusively in that domain. No generalists.
+      No white-label fulfilment. No outsourced execution dressed up as proprietary methodology.
+      <br><br>
+      Our approach is grounded in <strong>sequential hypothesis testing</strong> &mdash; we do not
+      allocate significant media spend to unvalidated assumptions. Every campaign expansion,
+      channel addition, and creative direction is preceded by a controlled test with a
+      predefined success criterion. This is not a philosophy we sell. It is the operational
+      constraint under which every account is managed.
+    </p>
+
+    <div class="svc-stat-strip">
+      <div class="svc-stat-cell">
+        <div class="svc-stat-n">24</div>
+        <div class="svc-stat-l">Active Client Accounts</div>
+      </div>
+      <div class="svc-stat-cell" style="padding-left:32px;">
+        <div class="svc-stat-n">KES 15B+</div>
+        <div class="svc-stat-l">Cumulative Spend Managed</div>
+      </div>
+      <div class="svc-stat-cell" style="padding-left:32px;">
+        <div class="svc-stat-n">11</div>
+        <div class="svc-stat-l">Attribution Models Deployed</div>
+      </div>
+      <div class="svc-stat-cell" style="padding-left:32px;">
+        <div class="svc-stat-n">2</div>
+        <div class="svc-stat-l">Years Operating — Nairobi, Kenya</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── S2: SERVICE MATRIX ───────────────────── -->
+<section class="matrix-section">
+
+  <div class="matrix-header">
+    <div>
+      <div class="label">// 02 &mdash; Interactive Service Matrix</div>
+      <h2 class="section-h2" style="margin-top:10px;">Full capability breakdown.</h2>
+    </div>
+    <div class="mono" style="font-size:11px;color:var(--text-muted);">Select a service row to expand</div>
+  </div>
+
+  <div class="accordion">
+
+    <div class="accordion-row open" id="acc-1">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-1')">
+        <div class="acc-trigger-left">
+          <span class="acc-idx">01 //</span>
+          <span class="acc-title">Paid Acquisition &amp; Media Infrastructure</span>
+        </div>
+        <div class="acc-trigger-right">
+          <span class="acc-tag">Performance</span>
+          <span class="acc-tag">KES 1M+ Spend</span>
+          <div class="acc-chevron"><span class="acc-chevron-icon">+</span></div>
+        </div>
+      </button>
+
+      <div class="accordion-body">
+        <div class="accordion-desc">
+          <p>
+            We don't manage ad accounts. We engineer <strong>paid revenue systems</strong>
+            &mdash; structured around your unit economics, not platform defaults. Every account
+            we inherit is audited against 47 structural criteria before a single campaign
+            modification is made. Rebuilds are sequenced to minimize revenue disruption:
+            structure first, creative second, scale third.             Clients spending under KES 1M/month
+            are not accepted because at that threshold, the overhead of proper measurement
+            infrastructure cannot be amortized appropriately.
+          </p>
+        </div>
+        <div class="accordion-content">
+          <div class="acc-col">
+            <div class="acc-col-title">Channels Covered</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">Meta Ads Manager</div>
+                <div class="acc-item-sub">Advantage+, manual CBO, ABO, Reels, Stories placements</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Google Search &amp; PMax</div>
+                <div class="acc-item-sub">Exact/phrase/broad strategy, asset group architecture</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">YouTube Ads</div>
+                <div class="acc-item-sub">TrueView, non-skippable, bumper &mdash; demand gen campaigns</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">LinkedIn Campaign Manager</div>
+                <div class="acc-item-sub">ABM, Matched Audiences, Conversation Ads for B2B</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">TikTok Ads Manager</div>
+                <div class="acc-item-sub">Spark Ads, Top Feed, creative testing via ACO</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Microsoft Advertising</div>
+                <div class="acc-item-sub">Bing Search + LinkedIn profile targeting overlay</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Server-Side Tracking</div>
+                <div class="acc-item-sub">Meta CAPI, Google Enhanced Conversions, custom webhooks</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-col">
+            <div class="acc-col-title">Tech Stack &amp; Infrastructure</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">Looker Studio + BigQuery</div>
+                <div class="acc-item-sub">Custom dashboards with P&amp;L-aligned KPI mapping</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Segment (CDP)</div>
+                <div class="acc-item-sub">Unified event schema across web, app, and CRM sources</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Supermetrics Pipelines</div>
+                <div class="acc-item-sub">Automated data pulls to Sheets, Looker, or Snowflake</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Custom API Pipelines</div>
+                <div class="acc-item-sub">CRM &rarr; ad platform audience sync (HubSpot, Salesforce)</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Northbeam / Triple Whale</div>
+                <div class="acc-item-sub">MTA attribution for DTC accounts exceeding $500K/mo</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Google Tag Manager (Server)</div>
+                <div class="acc-item-sub">sGTM deployment for first-party data enrichment</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Postman + GA4 DebugView</div>
+                <div class="acc-item-sub">Event verification &amp; tracking QA protocols</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-col">
+            <div class="acc-col-title">Exact Deliverables</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">Weekly Sprint Updates</div>
+                <div class="acc-item-sub">Monday Loom walkthrough + Notion task log &mdash; every week without exception</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Real-Time Attribution Dashboard</div>
+                <div class="acc-item-sub">Live Looker Studio report updated every 4 hours via Supermetrics</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Monthly Attribution Reconciliation</div>
+                <div class="acc-item-sub">Platform data vs. CRM closed-won cross-referencing</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Creative Fatigue Analysis</div>
+                <div class="acc-item-sub">Weekly frequency, CTR decay, and hook rate tracking per ad</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Quarterly Strategy Review</div>
+                <div class="acc-item-sub">Full account performance audit + 90-day roadmap update</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Creative Brief Templates</div>
+                <div class="acc-item-sub">Structured briefs for each ad type with performance hypothesis</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Audience Architecture Doc</div>
+                <div class="acc-item-sub">Full segment map with exclusion logic and overlap analysis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-row" id="acc-2">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-2')">
+        <div class="acc-trigger-left">
+          <span class="acc-idx">02 //</span>
+          <span class="acc-title">Enterprise SEO &amp; Technical Search</span>
+        </div>
+        <div class="acc-trigger-right">
+          <span class="acc-tag">Organic</span>
+          <span class="acc-tag">50K+ Pages</span>
+          <div class="acc-chevron"><span class="acc-chevron-icon">+</span></div>
+        </div>
+      </button>
+
+      <div class="accordion-body">
+        <div class="accordion-desc">
+          <p>
+            Enterprise SEO is a <strong>revenue engineering discipline</strong>, not a
+            content volume strategy. We operate at the intersection of crawl infrastructure,
+            keyword economics, and CMS architecture. Before any content strategy is defined,
+            we build a complete financial model of the organic channel: expected traffic
+            by intent tier, conversion rate assumptions by landing page type, and required
+            link acquisition velocity to achieve ranking targets within your
+            competitive landscape. <strong>If the numbers don't support the investment, we say so.</strong>
+          </p>
+        </div>
+        <div class="accordion-content">
+          <div class="acc-col">
+            <div class="acc-col-title">Channels Covered</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">Google Search (Core Web Vitals)</div>
+                <div class="acc-item-sub">LCP, CLS, INP optimization for ranking signal improvement</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Bing / Microsoft Bing</div>
+                <div class="acc-item-sub">IndexNow protocol, Bing Webmaster Tools configuration</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">AI Search Optimization</div>
+                <div class="acc-item-sub">SGE visibility, Perplexity citation, entity optimization</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">International SEO</div>
+                <div class="acc-item-sub">Hreflang architecture, CCTLD vs subdirectory strategy</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Local SEO (Enterprise)</div>
+                <div class="acc-item-sub">Multi-location GBP management, local pack optimization</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-col">
+            <div class="acc-col-title">Tech Stack &amp; Infrastructure</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">Screaming Frog + Custom Config</div>
+                <div class="acc-item-sub">Crawl at 10M+ URLs with custom extraction rules</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Ahrefs + SemRush API</div>
+                <div class="acc-item-sub">Keyword data piped to BigQuery for cluster modelling</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Log File Analysis (Splunk / ELK)</div>
+                <div class="acc-item-sub">Googlebot crawl pattern analysis and budget modelling</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Google Search Console API</div>
+                <div class="acc-item-sub">Automated CTR anomaly detection and query monitoring</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Schema Markup Validator</div>
+                <div class="acc-item-sub">Automated schema testing pre- and post-deployment</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">CMS Integration (Contentful, WP)</div>
+                <div class="acc-item-sub">Template-level SEO field architecture + bulk publishing</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-col">
+            <div class="acc-col-title">Exact Deliverables</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">Full Technical SEO Audit</div>
+                <div class="acc-item-sub">147-point audit covering crawl, rendering, Core Web Vitals, schema, internals</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Keyword Cluster Economics Model</div>
+                <div class="acc-item-sub">Traffic &times; conversion rate &times; value per visitor by cluster, in a Sheets model</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Content Architecture Blueprint</div>
+                <div class="acc-item-sub">URL taxonomy, internal link map, pillar&ndash;cluster hierarchy</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Monthly Ranking Report</div>
+                <div class="acc-item-sub">Position tracking across 500+ target keywords with trend overlays</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Link Acquisition Report</div>
+                <div class="acc-item-sub">Monthly outreach pipeline, DR targets, and live link tracking</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Log File Report (Quarterly)</div>
+                <div class="acc-item-sub">Googlebot visit frequency, crawl waste analysis, budget recommendations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-row" id="acc-3">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-3')">
+        <div class="acc-trigger-left">
+          <span class="acc-idx">03 //</span>
+          <span class="acc-title">Conversion Rate Optimization &amp; Landing Page Engineering</span>
+        </div>
+        <div class="acc-trigger-right">
+          <span class="acc-tag">CRO</span>
+          <span class="acc-tag">5K+ Sessions/mo</span>
+          <div class="acc-chevron"><span class="acc-chevron-icon">+</span></div>
+        </div>
+      </button>
+
+      <div class="accordion-body">
+        <div class="accordion-desc">
+          <p>
+            CRO is the highest-leverage capability we offer because it multiplies the value
+            of every other channel. A 20% improvement in landing page conversion rate is
+            equivalent to a 20% reduction in paid media CPL &mdash; permanently, across all channels.
+            <strong>We approach CRO as an engineering discipline:</strong> hypothesis-driven,
+            statistically rigorous, with a minimum detectable effect defined before any test
+            is launched. We do not run tests to generate insights &mdash; we run tests to make
+            binary, high-confidence decisions about revenue-impacting page elements.
+          </p>
+        </div>
+        <div class="accordion-content">
+          <div class="acc-col">
+            <div class="acc-col-title">Channels Covered</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">Landing Page A/B Testing</div>
+                <div class="acc-item-sub">Above-fold, form, social proof, and CTA variants</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Checkout Funnel Optimization</div>
+                <div class="acc-item-sub">Multi-step form reduction, trust signal placement, friction mapping</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Email &amp; SMS Flow Optimization</div>
+                <div class="acc-item-sub">Klaviyo / HubSpot flow architecture and subject line testing</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Product Page Optimization (eComm)</div>
+                <div class="acc-item-sub">Image sequencing, review placement, variant selector UX</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Demo / Trial Request Pages (SaaS)</div>
+                <div class="acc-item-sub">Form field reduction, qualification logic, social proof hierarchy</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-col">
+            <div class="acc-col-title">Tech Stack &amp; Infrastructure</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">VWO / Optimizely</div>
+                <div class="acc-item-sub">A/B and multivariate testing with statistical significance controls</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Hotjar / Microsoft Clarity</div>
+                <div class="acc-item-sub">Heatmaps, session recordings, scroll depth, rage-click analysis</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">PostHog (Product Analytics)</div>
+                <div class="acc-item-sub">Funnel analysis, cohort retention, feature flag A/B testing</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Webflow / Next.js Prototyping</div>
+                <div class="acc-item-sub">Rapid landing page builds without engineering dependency</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Custom Bayesian Test Calculator</div>
+                <div class="acc-item-sub">Proprietary significance model accounting for revenue per variant</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-col">
+            <div class="acc-col-title">Exact Deliverables</div>
+            <div class="acc-col-items">
+              <div class="acc-col-item">
+                <div class="acc-item-name">CRO Audit Report</div>
+                <div class="acc-item-sub">Heatmap analysis + session recording review + hypothesis backlog (Tier 1&ndash;3)</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Test Plan &amp; Hypothesis Doc</div>
+                <div class="acc-item-sub">Prioritized test backlog with expected lift, sample size, and runtime</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Test Results Report</div>
+                <div class="acc-item-sub">Per-test outcome doc with statistical significance and revenue impact</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Monthly Conversion Report</div>
+                <div class="acc-item-sub">CVR by channel, device, traffic source &mdash; trend analysis over 90 days</div>
+              </div>
+              <div class="acc-col-item">
+                <div class="acc-item-name">Winning Variant Handoff</div>
+                <div class="acc-item-sub">Design specs + annotated rationale delivered to client dev team</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── S3: AUDIT FRAMEWORK ──────────────────── -->
+<section class="audit-section">
+
+  <div class="section-header" style="margin-bottom:0;">
+    <div>
+      <div class="label">// 03 &mdash; Performance &amp; Optimization Audits</div>
+      <h2 class="section-h2" style="margin-top:12px;">
+        The audit is the<br>foundation, not the sales pitch.
+      </h2>
+    </div>
+    <div class="section-desc">
+      We issue a structured audit before every engagement. What we find
+      determines the scope of work &mdash; not a pre-written proposal.
+    </div>
+  </div>
+
+  <div class="audit-intro">
+    <div class="audit-intro-left">
+      <div class="label" style="margin-bottom:16px;">Audit Philosophy</div>
+      <div class="mono" style="font-size:12px;color:var(--text-muted);line-height:1.8;">
+        Duration: 5&ndash;7 business days<br>
+        Access required: Ad accounts, GA4, GSC, CRM<br>
+        Output: 40&ndash;80 page audit report<br>
+        Cost: Complimentary for qualified accounts
+      </div>
+    </div>
+    <div class="audit-intro-right">
+      <p>
+        Every audit we conduct begins with the assumption that the data we're being shown
+        is partially wrong. <strong>Not because clients are dishonest, but because
+        the tools that generate that data are structurally imperfect:</strong> browser-based
+        pixels that fire inconsistently, attribution windows that over-credit last-click,
+        and GA4 configurations that have never been validated against actual conversion volume.
+      </p>
+      <p>
+        Our audit framework is divided into four layers: <strong>measurement integrity,
+        account structure, creative performance,</strong> and <strong>competitive
+        positioning.</strong> Each layer has a defined scoring rubric, and critical
+        failures in measurement integrity automatically trigger a tracking rebuild
+        recommendation before any media strategy changes are proposed.
+      </p>
+    </div>
+  </div>
+
+  <div class="audit-grid">
+
+    <div class="audit-cell">
+      <div class="audit-cell-idx">AUDIT LAYER 01 //</div>
+      <h3 class="audit-cell-title">Ad Account Structural Audit</h3>
+      <p class="audit-cell-text">
+        We examine campaign architecture against platform best practices and your
+        specific business model. This includes campaign-to-ad-set ratios, budget
+        allocation logic, bidding strategy alignment with conversion window,
+        audience overlap at ad-set level, and exclusion logic integrity.
+        A structurally broken account wastes 20&ndash;40% of spend before any
+        optimisation takes effect.
+      </p>
+      <div class="audit-tags">
+        <span class="audit-tag">Campaign Architecture</span>
+        <span class="audit-tag">Audience Overlap</span>
+        <span class="audit-tag">Budget Allocation</span>
+        <span class="audit-tag">Bidding Strategy</span>
+        <span class="audit-tag">Exclusion Logic</span>
+      </div>
+    </div>
+
+    <div class="audit-cell">
+      <div class="audit-cell-idx">AUDIT LAYER 02 //</div>
+      <h3 class="audit-cell-title">Creative Fatigue Analysis</h3>
+      <p class="audit-cell-text">
+        We pull historical creative performance data and model frequency
+        curves against CTR decay rates. This produces a creative lifecycle
+        map: which ads are in growth phase, plateau, or active decline.
+        We identify the rotation failure points &mdash; the point at which
+        fatigued creative is dragging overall account CPM up due to
+        quality score degradation &mdash; and build a refresh calendar based
+        on actual spend velocity and audience size.
+      </p>
+      <div class="audit-tags">
+        <span class="audit-tag">Frequency Analysis</span>
+        <span class="audit-tag">CTR Decay Modelling</span>
+        <span class="audit-tag">Hook Rate Benchmarking</span>
+        <span class="audit-tag">Creative Rotation Schedule</span>
+      </div>
+    </div>
+
+    <div class="audit-cell">
+      <div class="audit-cell-idx">AUDIT LAYER 03 //</div>
+      <h3 class="audit-cell-title">Pixel &amp; Tracking Implementation Audit</h3>
+      <p class="audit-cell-text">
+        We map every conversion event against its implementation method:
+        browser-based pixel, server-side CAPI, or enhanced conversions.
+        We verify event deduplication logic, test for double-firing,
+        check parameter passing accuracy (value, currency, event_id),
+        and cross-reference total reported conversions against CRM
+        closed-won data for the preceding 90 days. Any discrepancy
+        above 15% triggers a rebuild recommendation as Priority 1.
+      </p>
+      <div class="audit-tags">
+        <span class="audit-tag">Event Deduplication</span>
+        <span class="audit-tag">CAPI Signal Match Rate</span>
+        <span class="audit-tag">GA4 Schema Validation</span>
+        <span class="audit-tag">CRM Reconciliation</span>
+        <span class="audit-tag">Parameter Accuracy</span>
+      </div>
+    </div>
+
+    <div class="audit-cell">
+      <div class="audit-cell-idx">AUDIT LAYER 04 //</div>
+      <h3 class="audit-cell-title">Competitive Intelligence Mapping</h3>
+      <p class="audit-cell-text">
+        Using Meta Ad Library, SpyFu, SemRush Share of Voice, and
+        LinkedIn Ads Transparency data, we construct a competitive
+        landscape map across paid and organic channels. We identify
+        which competitors are scaling spend (a leading indicator of
+        profitable unit economics), which keywords are under-contested
+        in your category, and where share-of-voice gaps represent
+        immediate expansion opportunities with verifiable demand.
+      </p>
+      <div class="audit-tags">
+        <span class="audit-tag">Share of Voice</span>
+        <span class="audit-tag">Meta Ad Library Analysis</span>
+        <span class="audit-tag">Keyword Gap Analysis</span>
+        <span class="audit-tag">Competitor Spend Modelling</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:48px;padding:40px;border:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--bg-card);">
+    <div>
+      <div class="label" style="margin-bottom:8px;">Ready to see what's actually in your account?</div>
+      <div style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--text-primary);letter-spacing:-0.01em;">
+        Request a complimentary growth audit.
+      </div>
+      <div style="font-size:13px;color:var(--text-secondary);margin-top:8px;">
+        5&ndash;7 business days. No contract required. Qualified accounts only (KES 1M+/mo in ad spend).
+      </div>
+    </div>
+    <div style="display:flex;gap:0;flex-shrink:0;">
+      <a href="contact.html" class="cta-primary" style="white-space:nowrap;">
+        Request Audit
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7H12M8 3L12 7L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+      </a>
+      <a href="proof.html" class="cta-secondary" style="white-space:nowrap;">View Sample Report</a>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

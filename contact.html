@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eclipxmedia — Contact & Onboarding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const hdr = await fetch('partials/header.html');
+    document.getElementById('header-placeholder').innerHTML = await hdr.text();
+    if (typeof initTheme === 'function') initTheme();
+    const ftr = await fetch('partials/footer.html');
+    document.getElementById('footer-placeholder').innerHTML = await ftr.text();
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.page-tab').forEach(function(a) {
+      if (a.getAttribute('href') === current) a.classList.add('active');
+    });
+  } catch(e) {
+    console.warn('Could not load header/footer partials.', e);
+  }
+});
+</script>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+
+<div class="contact-layout">
+
+  <div class="contact-form-area">
+    <div class="contact-form-header">
+      <div class="label">// 05 &mdash; Discovery &amp; Onboarding</div>
+      <h1 class="contact-form-h1">Start with the audit.<br>Everything else follows.</h1>
+      <p style="font-size:13px;color:var(--text-secondary);margin-top:10px;line-height:1.7;">Complete the three-step diagnostic below. We review every submission within one business day. Accounts not meeting our minimum engagement criteria receive a direct response explaining why, along with any relevant referrals. No submission goes unanswered.</p>
+    </div>
+
+    <div class="step-indicator">
+      <div class="step-ind-item active" id="si-1"><div class="step-ind-num">01</div><div class="step-ind-label">Corporate Profile</div></div>
+      <div class="step-ind-item" id="si-2"><div class="step-ind-num">02</div><div class="step-ind-label">Diagnostic</div></div>
+      <div class="step-ind-item" id="si-3"><div class="step-ind-num">03</div><div class="step-ind-label">Capital Allocation</div></div>
+    </div>
+
+    <div class="form-steps-container">
+
+      <div class="form-step active" id="step-1">
+        <div class="form-step-title">Corporate Profile</div>
+        <div class="form-step-sub">Tell us about your organisation. All fields required for submission review.</div>
+        <div class="field-group"><label class="field-label">Company Name</label><input type="text" class="field-input" placeholder="Acme Inc."></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+          <div class="field-group"><label class="field-label">First Name</label><input type="text" class="field-input" placeholder="James" style="border-right:none;"></div>
+          <div class="field-group"><label class="field-label">Last Name</label><input type="text" class="field-input" placeholder="Whitmore"></div>
+        </div>
+        <div class="field-group"><label class="field-label">Company Website URL</label><input type="url" class="field-input" placeholder="https://yourcompany.com"></div>
+        <div class="field-group"><label class="field-label">Your Role / Title</label><input type="text" class="field-input" placeholder="e.g. CMO, Head of Growth, Founder"></div>
+        <div class="field-group"><label class="field-label">Business Email</label><input type="email" class="field-input" placeholder="james@yourcompany.com"></div>
+        <div class="field-group">
+          <label class="field-label">Current Annual Revenue Range (KES)</label>
+          <div class="scale-options" id="revenue-selector">
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">Under KES 10M</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 10M&ndash;KES 100M</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 100M&ndash;KES 500M</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 500M&ndash;KES 2B</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 2B+</button>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Primary Business Model</label>
+          <select class="field-select">
+            <option value="" disabled selected>Select business model</option>
+            <option>B2B SaaS</option><option>B2B Services / Consulting</option><option>D2C E-Commerce</option><option>Enterprise E-Commerce</option><option>Lead Generation / Financial Services</option><option>Marketplace</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-step" id="step-2">
+        <div class="form-step-title">Growth Diagnostic</div>
+        <div class="form-step-sub">Select all constraints that currently apply to your marketing operation. Be specific &mdash; the more precise your answers, the more useful our audit response will be.</div>
+        <div class="field-group">
+          <label class="field-label" style="margin-bottom:12px;">Primary Growth Bottleneck(s) &mdash; Select all that apply</label>
+          <div class="check-options">
+            <div class="check-option" onclick="toggleCheck(this)"><div class="check-box"></div><div><div class="check-text">Scaling Ad Spend Without CPA Degradation</div><div class="check-sub">Revenue grows but cost-per-acquisition increases disproportionately at scale</div></div></div>
+            <div class="check-option" onclick="toggleCheck(this)"><div class="check-box"></div><div><div class="check-text">Low Landing Page / Funnel Conversion Rate</div><div class="check-sub">Traffic quality is acceptable but on-site conversion rate underperforms benchmarks</div></div></div>
+            <div class="check-option" onclick="toggleCheck(this)"><div class="check-box"></div><div><div class="check-text">Attribution / Pixel Implementation Errors</div><div class="check-sub">Platform-reported data does not reconcile with CRM or revenue records</div></div></div>
+            <div class="check-option" onclick="toggleCheck(this)"><div class="check-box"></div><div><div class="check-text">Creative Fatigue &amp; Ad Performance Decay</div><div class="check-sub">ROAS declining over time without spend changes &mdash; likely audience saturation or creative exhaustion</div></div></div>
+            <div class="check-option" onclick="toggleCheck(this)"><div class="check-box"></div><div><div class="check-text">Organic Search Visibility Gap</div><div class="check-sub">Over-reliance on paid channels, minimal organic traffic or content infrastructure</div></div></div>
+            <div class="check-option" onclick="toggleCheck(this)"><div class="check-box"></div><div><div class="check-text">Lead Quality &mdash; High Volume, Low Close Rate</div><div class="check-sub">MQL volume is sufficient but MQL&rarr;SQL and SQL&rarr;Close rates are below target</div></div></div>
+            <div class="check-option" onclick="toggleCheck(this)"><div class="check-box"></div><div><div class="check-text">Lack of Unified Reporting Infrastructure</div><div class="check-sub">No single dashboard &mdash; data lives in separate platform UIs and requires manual consolidation</div></div></div>
+          </div>
+        </div>
+        <div class="field-group" style="margin-top:8px;">
+          <label class="field-label">Current Primary Paid Channels &mdash; Select all active</label>
+          <div class="scale-options" id="channel-selector" style="flex-wrap:wrap;">
+            <button class="scale-option" onclick="selectScale(this,'channel-selector',true)" style="margin-bottom:0;">Meta Ads</button>
+            <button class="scale-option" onclick="selectScale(this,'channel-selector',true)">Google Search</button>
+            <button class="scale-option" onclick="selectScale(this,'channel-selector',true)">Google PMax</button>
+            <button class="scale-option" onclick="selectScale(this,'channel-selector',true)">LinkedIn</button>
+            <button class="scale-option" onclick="selectScale(this,'channel-selector',true)">TikTok</button>
+            <button class="scale-option" onclick="selectScale(this,'channel-selector',true)">YouTube</button>
+            <button class="scale-option" onclick="selectScale(this,'channel-selector',true)" style="border-right:1px solid var(--border);">None Yet</button>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Describe the single biggest problem in your current marketing operation</label>
+          <textarea class="field-input" rows="4" placeholder="Be specific &mdash; e.g. 'Our Meta ROAS has declined from 4.2x to 2.1x over 6 months and we don't know if it's creative fatigue, audience exhaustion, or a tracking issue.' The more detail you provide, the more targeted our audit response will be." style="resize:vertical;min-height:96px;"></textarea>
+        </div>
+      </div>
+
+      <div class="form-step" id="step-3">
+        <div class="form-step-title">Capital Allocation</div>
+        <div class="form-step-sub">Your monthly ad spend determines the scope and infrastructure investment your account requires. We are transparent about our minimum thresholds and the reasoning behind them.</div>
+        <div class="field-group">
+          <label class="field-label" style="margin-bottom:14px;">Current Monthly Liquid Ad Budget (KES)</label>
+          <div class="budget-track" id="budget-selector">
+            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">Under KES 200,000 / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:12%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 200K &ndash; KES 1M / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:30%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option selected" onclick="selectBudget(this)"><div class="budget-label">KES 1M &ndash; KES 5M / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:55%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 5M &ndash; KES 20M / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:75%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 20M+ / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:100%"></div></div><div class="budget-radio"></div></div>
+          </div>
+          <div style="margin-top:10px;font-family:var(--mono);font-size:10px;color:var(--text-muted);line-height:1.6;">// Minimum threshold: KES 1,000,000/month in active, deployable ad spend. Accounts below this threshold are not a fit for our model. We will explain why and refer you to agencies whose model fits your current stage.</div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Target Timeline for First Campaign Results</label>
+          <div class="scale-options" id="timeline-selector">
+            <button class="scale-option" onclick="selectScale(this,'timeline-selector')">ASAP</button>
+            <button class="scale-option selected" onclick="selectScale(this,'timeline-selector')">Within 30 Days</button>
+            <button class="scale-option" onclick="selectScale(this,'timeline-selector')">30&ndash;60 Days</button>
+            <button class="scale-option" onclick="selectScale(this,'timeline-selector')">60&ndash;90 Days</button>
+            <button class="scale-option" onclick="selectScale(this,'timeline-selector')">Flexible</button>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label">How did you find eclipxmedia?</label>
+          <select class="field-select">
+            <option value="" disabled selected>Select source</option>
+            <option>Google Search</option><option>Referral from a client or partner</option><option>LinkedIn</option><option>Read an article or case study</option><option>Conference or event</option><option>Other</option>
+          </select>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);padding:20px;margin-top:8px;">
+          <div class="label" style="margin-bottom:10px;">What happens after you submit</div>
+          <div class="phase-checklist" style="gap:8px;">
+            <div class="phase-check" style="padding-bottom:8px;"><span class="check-idx">01</span><span style="font-size:12px;">We review your submission within 1 business day and assess fit against our engagement criteria.</span></div>
+            <div class="phase-check" style="padding-bottom:8px;border-bottom:1px solid var(--border);"><span class="check-idx">02</span><span style="font-size:12px;">If you qualify, you'll receive a calendar invite for a 30-minute discovery call with your assigned senior strategist.</span></div>
+            <div class="phase-check" style="padding-bottom:0;border-bottom:none;"><span class="check-idx">03</span><span style="font-size:12px;">Discovery call leads to a proposal within 3 business days &mdash; audit scope, timeline, and engagement terms. No vague follow-ups.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-nav">
+      <div class="form-progress" id="form-progress">Step 1 of 3 &mdash; Corporate Profile</div>
+      <div style="display:flex;gap:0;">
+        <button class="form-back-btn" id="back-btn" onclick="formBack()" style="display:none;">&larr; Back</button>
+        <button class="form-next-btn" id="next-btn" onclick="formNext()">Continue <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6H10M7 3L10 6L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></button>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <div class="label">// Operational FAQs &mdash; Onboarding &amp; Engagement</div>
+      <div class="faq-list">
+        <div class="faq-item" id="faq-0">
+          <button class="faq-trigger" onclick="toggleFaq('faq-0')"><div class="faq-q-wrap"><span class="faq-q-idx">01 //</span><span class="faq-q">What are your contract terms and minimum commitment length?</span></div><div class="faq-toggle">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Our standard engagement structure is a <strong>rolling 90-day contract with a 30-day written termination notice period</strong>. We do not require 6 or 12-month lock-ins because we believe client retention should be earned through performance, not contractual obligation. The 90-day minimum exists because meaningful paid media results require at minimum one full audit, one structural rebuild cycle, and sufficient time to exit the learning phase with statistically significant data. There are no setup fees. Management fees are agreed in the proposal and fixed for the first 90-day term, with any adjustments requiring 30 days written notice.</div></div>
+        </div>
+        <div class="faq-item" id="faq-1">
+          <button class="faq-trigger" onclick="toggleFaq('faq-1')"><div class="faq-q-wrap"><span class="faq-q-idx">02 //</span><span class="faq-q">Who owns the ad accounts, creative assets, and data generated during the engagement?</span></div><div class="faq-toggle">+</div></button>
+          <div class="faq-body"><div class="faq-answer"><strong>You own everything. Always.</strong> Ad accounts must be created in your Business Manager &mdash; we work with admin access granted to our agency account, never accounts created in our infrastructure. All creative assets are transferred to you in full upon delivery &mdash; source files, video exports, copy documents. Looker Studio dashboards are built in your Google account. All data pipelines (Supermetrics, BigQuery tables, Segment sources) are provisioned in your accounts. Engagement end means we remove ourselves from access. Your data, your accounts, your assets &mdash; unconditionally and without leverage.</div></div>
+        </div>
+        <div class="faq-item" id="faq-2">
+          <button class="faq-trigger" onclick="toggleFaq('faq-2')"><div class="faq-q-wrap"><span class="faq-q-idx">03 //</span><span class="faq-q">How do you handle data privacy, GDPR compliance, and first-party data infrastructure?</span></div><div class="faq-toggle">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Data privacy compliance is built into our tracking architecture by default. All server-side tracking implementations include <strong>Consent Mode v2 configuration</strong> (Google) and relevant data processing agreements. We do not transmit personally identifiable information to ad platforms without explicit consent signal &mdash; server-side implementations use hashed email and phone data in compliance with Meta's data use policy and Google's Customer Match requirements. For EU-domiciled clients, all data processing occurs within EU infrastructure where technically feasible. We are registered as a data processor under GDPR and can provide our Data Processing Agreement at the proposal stage.</div></div>
+        </div>
+        <div class="faq-item" id="faq-3">
+          <button class="faq-trigger" onclick="toggleFaq('faq-3')"><div class="faq-q-wrap"><span class="faq-q-idx">04 //</span><span class="faq-q">What is the minimum ad spend required, and what happens if we're below it?</span></div><div class="faq-toggle">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Our minimum is <strong>KES 1,000,000 per month in liquid, deployable ad spend</strong> &mdash; budget that exists today and is allocated to paid media, not projected future spend. Below KES 1M/month, the overhead of building and maintaining server-side tracking infrastructure, real-time attribution dashboards, and weekly sprint management cannot be amortised appropriately against the management fee structure required to staff an account correctly. If you're currently at KES 200K&ndash;KES 800K/month with a credible plan to reach the threshold within 60&ndash;90 days, contact us anyway &mdash; we'll have an honest conversation. Accounts clearly below threshold receive a direct explanation and referrals to agencies whose model fits their stage.</div></div>
+        </div>
+        <div class="faq-item" id="faq-4">
+          <button class="faq-trigger" onclick="toggleFaq('faq-4')"><div class="faq-q-wrap"><span class="faq-q-idx">05 //</span><span class="faq-q">Do you work with all industries, and are there sectors you decline?</span></div><div class="faq-toggle">+</div></button>
+          <div class="faq-body"><div class="faq-answer">We work primarily with B2B SaaS, DTC e-commerce, enterprise e-commerce, financial services (FCA/SEC regulated), professional services, and lead-generation businesses. <strong>We do not accept engagements in:</strong> gambling or sports betting, crypto and unregulated financial products, adult content, tobacco and vaping, multi-level marketing, or any business whose core product is demonstrably harmful. We also decline to work with businesses where we cannot establish a clean measurement foundation &mdash; if your CRM data is fundamentally unreliable or your internal compliance structure prevents proper tracking implementation, we cannot produce results worth charging for.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right-panel">
+    <div class="cal-header">
+      <div class="label">// Direct Consultation Terminal</div>
+      <div class="cal-title">Book a 30-Minute Discovery Call</div>
+      <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-top:8px;">All times shown in your local timezone. Calls are conducted by a senior strategist &mdash; not a sales representative. A structured agenda is sent 24 hours prior. The call has a defined format: 10 minutes on your situation, 10 minutes on our diagnosis, 10 minutes on next steps.</p>
+    </div>
+    <div class="cal-nav">
+      <button class="cal-nav-btn" onclick="calNav(-1)">&larr;</button>
+      <div class="cal-month" id="cal-month-label">June 2025</div>
+      <button class="cal-nav-btn" onclick="calNav(1)">&rarr;</button>
+    </div>
+    <div class="cal-grid-wrap">
+      <div class="cal-dow-row">
+        <div class="cal-dow">M</div><div class="cal-dow">T</div><div class="cal-dow">W</div><div class="cal-dow">T</div><div class="cal-dow">F</div><div class="cal-dow">S</div><div class="cal-dow">S</div>
+      </div>
+      <div class="cal-days-grid" id="cal-days"></div>
+    </div>
+    <div class="cal-slots">
+      <div class="cal-slots-title">Available Times &mdash; <span id="cal-selected-date">Select a date above</span></div>
+      <div class="cal-slot-grid" id="cal-slot-grid">
+        <div class="cal-slot taken">09:00 AM</div>
+        <div class="cal-slot" onclick="selectSlot(this)">09:30 AM</div>
+        <div class="cal-slot taken">10:00 AM</div>
+        <div class="cal-slot" onclick="selectSlot(this)">10:30 AM</div>
+        <div class="cal-slot" onclick="selectSlot(this)">11:00 AM</div>
+        <div class="cal-slot taken">11:30 AM</div>
+        <div class="cal-slot" onclick="selectSlot(this)">02:00 PM</div>
+        <div class="cal-slot" onclick="selectSlot(this)">02:30 PM</div>
+        <div class="cal-slot taken">03:00 PM</div>
+        <div class="cal-slot" onclick="selectSlot(this)">03:30 PM</div>
+        <div class="cal-slot" onclick="selectSlot(this)">04:00 PM</div>
+        <div class="cal-slot taken">04:30 PM</div>
+      </div>
+    </div>
+    <div class="cal-confirm">
+      <button class="cal-confirm-btn" id="cal-confirm-btn" onclick="confirmBooking()">Select a date and time to confirm</button>
+    </div>
+    <div style="padding:16px 32px;border-top:1px solid var(--border);background:var(--bg-card);">
+      <div class="label" style="margin-bottom:12px;">What to Prepare Before the Call</div>
+      <div class="comms-detail-list">
+        <div class="comms-detail" style="font-size:10px;">Read-only access to your primary ad account(s) &mdash; share in advance if possible</div>
+        <div class="comms-detail" style="font-size:10px;">Last 90 days of GA4 or analytics data for context</div>
+        <div class="comms-detail" style="font-size:10px;">Current monthly ad spend (approximate is fine)</div>
+        <div class="comms-detail" style="font-size:10px;">Your CAC target and LTV estimate &mdash; even rough figures help</div>
+        <div class="comms-detail" style="font-size:10px;">The single metric you most urgently need to improve</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
