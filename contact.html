@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         <div class="field-group">
           <label class="field-label">Current Annual Revenue Range (KES)</label>
           <div class="scale-options" id="revenue-selector">
-            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">Under KES 10M</button>
-            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 10M&ndash;KES 100M</button>
-            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 100M&ndash;KES 500M</button>
-            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 500M&ndash;KES 2B</button>
-            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 2B+</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">Under KES 500K</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 500K&ndash;KES 5M</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 5M&ndash;KES 20M</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 20M&ndash;KES 100M</button>
+            <button class="scale-option" onclick="selectScale(this,'revenue-selector')">KES 100M+</button>
           </div>
         </div>
         <div class="field-group">
@@ -118,13 +118,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         <div class="field-group">
           <label class="field-label" style="margin-bottom:14px;">Current Monthly Liquid Ad Budget (KES)</label>
           <div class="budget-track" id="budget-selector">
-            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">Under KES 200,000 / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:12%"></div></div><div class="budget-radio"></div></div>
-            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 200K &ndash; KES 1M / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:30%"></div></div><div class="budget-radio"></div></div>
-            <div class="budget-option selected" onclick="selectBudget(this)"><div class="budget-label">KES 1M &ndash; KES 5M / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:55%"></div></div><div class="budget-radio"></div></div>
-            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 5M &ndash; KES 20M / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:75%"></div></div><div class="budget-radio"></div></div>
-            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 20M+ / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:100%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">Under KES 50,000 / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:12%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 50K &ndash; KES 200K / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:30%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option selected" onclick="selectBudget(this)"><div class="budget-label">KES 200K &ndash; KES 800K / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:55%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 800K &ndash; KES 2M / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:75%"></div></div><div class="budget-radio"></div></div>
+            <div class="budget-option" onclick="selectBudget(this)"><div class="budget-label">KES 2M+ / month</div><div class="budget-bar-outer"><div class="budget-bar-inner" style="width:100%"></div></div><div class="budget-radio"></div></div>
           </div>
-          <div style="margin-top:10px;font-family:var(--mono);font-size:10px;color:var(--text-muted);line-height:1.6;">// Minimum threshold: KES 1,000,000/month in active, deployable ad spend. Accounts below this threshold are not a fit for our model. We will explain why and refer you to agencies whose model fits your current stage.</div>
+          <div style="margin-top:10px;font-family:var(--mono);font-size:10px;color:var(--text-muted);line-height:1.6;">// Minimum threshold: KES 200,000/month in active, deployable ad spend. Accounts below this threshold are not a fit for our model. We will explain why and refer you to agencies whose model fits your current stage.</div>
         </div>
         <div class="field-group">
           <label class="field-label">Target Timeline for First Campaign Results</label>
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         </div>
         <div class="faq-item" id="faq-3">
           <button class="faq-trigger" onclick="toggleFaq('faq-3')"><div class="faq-q-wrap"><span class="faq-q-idx">04 //</span><span class="faq-q">What is the minimum ad spend required, and what happens if we're below it?</span></div><div class="faq-toggle">+</div></button>
-          <div class="faq-body"><div class="faq-answer">Our minimum is <strong>KES 1,000,000 per month in liquid, deployable ad spend</strong> &mdash; budget that exists today and is allocated to paid media, not projected future spend. Below KES 1M/month, the overhead of building and maintaining server-side tracking infrastructure, real-time attribution dashboards, and weekly sprint management cannot be amortised appropriately against the management fee structure required to staff an account correctly. If you're currently at KES 200K&ndash;KES 800K/month with a credible plan to reach the threshold within 60&ndash;90 days, contact us anyway &mdash; we'll have an honest conversation. Accounts clearly below threshold receive a direct explanation and referrals to agencies whose model fits their stage.</div></div>
+          <div class="faq-body"><div class="faq-answer">Our minimum is <strong>KES 200,000 per month in liquid, deployable ad spend</strong> &mdash; budget that exists today and is allocated to paid media, not projected future spend. Below KES 200K/month, the overhead of building and maintaining server-side tracking infrastructure, real-time attribution dashboards, and weekly sprint management cannot be amortised appropriately against the management fee structure required to staff an account correctly. If you're currently at KES 40K&ndash;KES 160K/month with a credible plan to reach the threshold within 60&ndash;90 days, contact us anyway &mdash; we'll have an honest conversation. Accounts clearly below threshold receive a direct explanation and referrals to agencies whose model fits their stage.</div></div>
         </div>
         <div class="faq-item" id="faq-4">
           <button class="faq-trigger" onclick="toggleFaq('faq-4')"><div class="faq-q-wrap"><span class="faq-q-idx">05 //</span><span class="faq-q">Do you work with all industries, and are there sectors you decline?</span></div><div class="faq-toggle">+</div></button>
